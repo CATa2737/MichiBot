@@ -1,0 +1,50 @@
+{
+    "Utilidades":{
+        "emoji": "😻",
+       "Comida": {
+            "name": "Comida/Alimento",
+            "description": "Puedes alimentar a tu gatito/a con ella y darle 10% mas a la barra de comida con cada unidad",
+            "price": 20,
+             "emoji": "🍱"
+        },
+        "Medicina": {
+            "name": "Medicina/Salud",
+            "description": "Puedes recuperar toda la barra de salud de tu gatito/a con esto",
+            "price": 70,
+            "emoji": "💊"
+        }
+    },
+    "Estetica":{
+        "emoji": "💅",
+        "Gato-Riendo-Emoji": {
+            "description": "Un nuevo emoji para tu gatito/a",
+            "price": 40,
+            "emoji": "😹"
+        },
+        "Gato-Corazón-Ojos-Emoji": {
+            "description": "Un nuevo emoji para tu gatito/a",
+            "price": 40,
+            "emoji": "😻"
+        },
+        "Gato-Triste-Emoji": {
+            "description": "Un nuevo emoji para tu gatito/a",
+            "price": 40,
+            "emoji": "😿"
+        },
+        "Gato-Sorprendido-Emoji": {
+            "description": "Un nuevo emoji para tu gatito/a",
+            "price": 40,
+            "emoji": "🙀"
+        },
+        "Gato-Pro-Emoji": {
+            "description": "Un nuevo emoji para tu gatito/a",
+            "price": 80,
+            "emoji": "😼"
+        },
+        "Gato-Negro-Emoji": {
+            "description": "Un nuevo emoji para tu gatito/a",
+            "price": 90,
+            "emoji": "🐈‍⬛"
+        }
+    }
+}

@@ -1,0 +1,855 @@
+{
+  "670447611706212371": {
+    "cat": {
+      "noSub": [],
+      "name": "Juan",
+      "emoji": "🐈‍⬛",
+      "edad": 0,
+      "life": 87,
+      "food": 91,
+      "fun": 88,
+      "love": 97,
+      "level": 8,
+      "xp": 550,
+      "xpLimit": 4294.967296000002
+    },
+    "money": 25,
+    "inv": {
+      "Comida/Alimento": 0,
+      "Medicina/Salud": 0
+    },
+    "viewShit": true
+  },
+  "788841061241061408": {
+    "cat": {
+      "noSub": [],
+      "name": "Empanada",
+      "emoji": ":cat:",
+      "edad": 1651764286738,
+      "life": 74,
+      "food": 91,
+      "fun": 86,
+      "love": 88,
+      "level": 5,
+      "xp": 600,
+      "xpLimit": 1048
+    },
+    "money": 65,
+    "inv": {
+      "Comida/Alimento": 0
+    },
+    "viewShit": true
+  },
+  "598996523048763413": {
+    "cat": {
+      "noSub": [],
+      "name": "Marcelo",
+      "emoji": ":cat:",
+      "edad": 1651767382150,
+      "life": 76,
+      "food": 81,
+      "fun": 83,
+      "love": 70,
+      "level": 5,
+      "xp": 0,
+      "xpLimit": 1048
+    },
+    "money": 7,
+    "inv": {},
+    "viewShit": true
+  },
+  "760118917900402728": {
+    "cat": {
+      "noSub": [],
+      "name": "Juan Carlos",
+      "emoji": ":cat:",
+      "edad": 1651768461166,
+      "life": 96,
+      "food": 98,
+      "fun": 100,
+      "love": 98,
+      "level": 5,
+      "xp": 0,
+      "xpLimit": 1048
+    },
+    "money": 5,
+    "inv": {},
+    "viewShit": true
+  },
+  "730557377484423239": {
+    "cat": {
+      "noSub": [],
+      "name": "Lil bat",
+      "emoji": ":cat:",
+      "edad": 1651768921063,
+      "life": 95,
+      "food": 101,
+      "fun": 95,
+      "love": 98,
+      "level": 5,
+      "xp": 50,
+      "xpLimit": 1048
+    },
+    "money": 15,
+    "inv": {
+      "Comida/Alimento": 0
+    },
+    "viewShit": true
+  },
+  "926915035828195409": {
+    "cat": {
+      "noSub": [],
+      "name": "gato csm",
+      "emoji": ":cat:",
+      "edad": 1651770414218,
+      "life": 85,
+      "food": 90,
+      "fun": 95,
+      "love": 88,
+      "level": 5,
+      "xp": 600,
+      "xpLimit": 1048
+    },
+    "money": 35,
+    "inv": {
+      "Comida/Alimento": 0,
+      "Medicina/Salud": 0
+    },
+    "viewShit": true
+  },
+  "681183429400068135": {
+    "cat": {
+      "noSub": [],
+      "name": "\"Juan carlos II \"😱",
+      "emoji": ":cat:",
+      "edad": 1651940506520,
+      "life": 96,
+      "food": 92,
+      "fun": 94,
+      "love": 93,
+      "level": 5,
+      "xp": 0,
+      "xpLimit": 1048
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "905556326686527568": {
+    "cat": {
+      "noSub": [],
+      "name": "Shadow",
+      "emoji": ":cat:",
+      "edad": 1651940664761,
+      "life": 77,
+      "food": 90,
+      "fun": 88,
+      "love": 84,
+      "level": 6,
+      "xp": 250,
+      "xpLimit": 1676.8000000000002
+    },
+    "money": 25,
+    "inv": {
+      "Comida/Alimento": 0
+    },
+    "viewShit": true
+  },
+  "685268383327191041": {
+    "cat": {
+      "noSub": [],
+      "name": "Juan Carlos bodoque",
+      "emoji": ":cat:",
+      "edad": 1651972663230,
+      "life": 91,
+      "food": 101,
+      "fun": 103,
+      "love": 100,
+      "level": 8,
+      "xp": 50,
+      "xpLimit": 2684.354560000001
+    },
+    "money": 95,
+    "inv": {
+      "Comida/Alimento": 2,
+      "Medicina/Salud": 0
+    },
+    "viewShit": true
+  },
+  "333691338413309954": {
+    "cat": {
+      "noSub": [],
+      "name": "Kitty",
+      "emoji": ":cat:",
+      "edad": 1652027633726,
+      "life": 97,
+      "food": 97,
+      "fun": 100,
+      "love": 100,
+      "level": 4,
+      "xp": 350,
+      "xpLimit": 409.6
+    },
+    "money": 9,
+    "inv": {
+      "Comida/Alimento": 1
+    },
+    "viewShit": true
+  },
+  "487055755699159076": {
+    "cat": {
+      "noSub": [],
+      "name": "Mosh",
+      "emoji": "🐈‍⬛",
+      "edad": 1652034614143,
+      "life": 100,
+      "food": 94,
+      "fun": 99,
+      "love": 67,
+      "level": 10,
+      "xp": 1000,
+      "xpLimit": 6871.947673600003
+    },
+    "money": 0,
+    "inv": {
+      "Comida/Alimento": 0,
+      "Medicina/Salud": 0
+    },
+    "viewShit": true
+  },
+  "737810811417788507": {
+    "cat": {
+      "noSub": [],
+      "name": "Sr Cat",
+      "emoji": ":cat:",
+      "edad": 1652052640034,
+      "life": 90,
+      "food": 91,
+      "fun": 94,
+      "love": 87,
+      "level": 1,
+      "xp": 0,
+      "xpLimit": 100
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "825657747197526016": {
+    "cat": {
+      "noSub": [],
+      "name": "ahora que",
+      "emoji": ":cat:",
+      "edad": 1652108931310,
+      "life": 98,
+      "food": 96,
+      "fun": 99,
+      "love": 100,
+      "level": 2,
+      "xp": 50,
+      "xpLimit": 160
+    },
+    "money": 2,
+    "inv": {},
+    "viewShit": false
+  },
+  "947634850083516447": {
+    "cat": {
+      "noSub": [],
+      "name": "El bot en si está bueno, pero veo que por el momento aún está en una fase temprana, no?",
+      "emoji": ":cat:",
+      "edad": 1652109010676,
+      "life": 98,
+      "food": 100,
+      "fun": 98,
+      "love": 100,
+      "level": 5,
+      "xp": 200,
+      "xpLimit": 655.3600000000001
+    },
+    "money": 24,
+    "inv": {},
+    "viewShit": false
+  },
+  "782401905799200788": {
+    "cat": {
+      "noSub": [],
+      "name": "Arca Kick II",
+      "emoji": ":cat:",
+      "edad": 1652113330762,
+      "life": 83,
+      "food": 76,
+      "fun": 61,
+      "love": 81,
+      "level": 10,
+      "xp": 100,
+      "xpLimit": 6871.947673600003
+    },
+    "money": 150,
+    "inv": {
+      "Comida/Alimento": 0,
+      "Medicina/Salud": 0
+    },
+    "viewShit": true
+  },
+  "656159175335739393": {
+    "cat": {
+      "noSub": [],
+      "name": "bismarck",
+      "emoji": "🚢",
+      "edad": 1652318457435,
+      "life": 79,
+      "food": 85,
+      "fun": 85,
+      "love": 95,
+      "level": 3,
+      "xp": 100,
+      "xpLimit": 256,
+      "bismarck": true
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "745696192586973254": {
+    "cat": {
+      "noSub": [],
+      "name": "🤨",
+      "emoji": ":cat:",
+      "edad": 1652453627985,
+      "life": 95,
+      "food": 97,
+      "fun": 95,
+      "love": 98,
+      "level": 4,
+      "xp": 300,
+      "xpLimit": 409.6
+    },
+    "money": 22,
+    "inv": {},
+    "viewShit": false
+  },
+  "525785658825113630": {
+    "cat": {
+      "noSub": [],
+      "name": "webi wabo",
+      "emoji": ":cat:",
+      "edad": 1652453680575,
+      "life": 99,
+      "food": 100,
+      "fun": 100,
+      "love": 100,
+      "level": 1,
+      "xp": 0,
+      "xpLimit": 100
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "730473736469217372": {
+    "cat": {
+      "noSub": [],
+      "name": "julio ma xde jesus tercero cuarto cuarto chucho",
+      "emoji": ":cat:",
+      "edad": 1652454972629,
+      "life": 21,
+      "food": 16,
+      "fun": 40,
+      "love": 39,
+      "level": 7,
+      "xp": 350,
+      "xpLimit": 1677.7216000000005
+    },
+    "money": 61,
+    "inv": {
+      "Comida/Alimento": 0
+    },
+    "viewShit": true
+  },
+  "802988230382190603": {
+    "cat": {
+      "noSub": [],
+      "name": "Michi random",
+      "emoji": ":cat:",
+      "edad": 1652457432607,
+      "life": 99,
+      "food": 99,
+      "fun": 99,
+      "love": 99,
+      "level": 1,
+      "xp": 0,
+      "xpLimit": 100
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "929520986590683136": {
+    "cat": {
+      "noSub": [],
+      "name": "Golrock",
+      "emoji": ":cat:",
+      "edad": 1652457590753,
+      "life": 91,
+      "food": 87,
+      "fun": 91,
+      "love": 91,
+      "level": 2,
+      "xp": 50,
+      "xpLimit": 160
+    },
+    "money": 12,
+    "inv": {},
+    "viewShit": false
+  },
+  "902624980070703164": {
+    "cat": {
+      "noSub": [],
+      "name": "Xyode",
+      "emoji": ":cat:",
+      "edad": 1652459136233,
+      "life": 100,
+      "food": 100,
+      "fun": 99,
+      "love": 99,
+      "level": 1,
+      "xp": 0,
+      "xpLimit": 100
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "797257528470929429": {
+    "cat": {
+      "noSub": [],
+      "name": "HatCat",
+      "emoji": ":cat:",
+      "edad": 1652466253473,
+      "life": 99,
+      "food": 100,
+      "fun": 98,
+      "love": 99,
+      "level": 4,
+      "xp": 200,
+      "xpLimit": 409.6
+    },
+    "money": 6,
+    "inv": {},
+    "viewShit": false
+  },
+  "878454512505987142": {
+    "cat": {
+      "noSub": [],
+      "name": "Anekakanekulo",
+      "emoji": ":cat:",
+      "edad": 1652474377336,
+      "life": 75,
+      "food": 68,
+      "fun": 99,
+      "love": 99,
+      "level": 5,
+      "xp": 150,
+      "xpLimit": 655.3600000000001
+    },
+    "money": 32,
+    "inv": {},
+    "viewShit": true
+  },
+  "765322592243548230": {
+    "cat": {
+      "noSub": [],
+      "name": "Karlitos",
+      "emoji": ":cat:",
+      "edad": 1652474711665,
+      "life": 72,
+      "food": 88,
+      "fun": 91,
+      "love": 99,
+      "level": 7,
+      "xp": 50,
+      "xpLimit": 1677.7216000000005
+    },
+    "money": 13,
+    "inv": {
+      "Comida/Alimento": 3
+    },
+    "viewShit": true
+  },
+  "526594630192594987": {
+    "cat": {
+      "noSub": [],
+      "name": "Koko",
+      "emoji": ":cat:",
+      "edad": 1652475030171,
+      "life": 78,
+      "food": 72,
+      "fun": 83,
+      "love": 71,
+      "level": 6,
+      "xp": 500,
+      "xpLimit": 1048.5760000000002
+    },
+    "money": 54,
+    "inv": {
+      "Comida/Alimento": 2,
+      "Medicina/Salud": 0
+    },
+    "viewShit": false
+  },
+  "762720892676603904": {
+    "cat": {
+      "noSub": [],
+      "name": "yoshi",
+      "emoji": ":cat:",
+      "edad": 1652475064326,
+      "life": 99,
+      "food": 100,
+      "fun": 90,
+      "love": 70,
+      "level": 9,
+      "xp": 1950,
+      "xpLimit": 4294.967296000002
+    },
+    "money": 105,
+    "inv": {
+      "Comida/Alimento": 1,
+      "Medicina/Salud": 0
+    },
+    "viewShit": false
+  },
+  "874080551080976395": {
+    "cat": {
+      "noSub": [],
+      "name": "Queso",
+      "emoji": ":cat:",
+      "edad": 1652475566292,
+      "life": 100,
+      "food": 100,
+      "fun": 100,
+      "love": 100,
+      "level": 2,
+      "xp": 0,
+      "xpLimit": 160
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "845028792417386536": {
+    "cat": {
+      "noSub": [],
+      "name": "Tulio",
+      "emoji": ":cat:",
+      "edad": 1652477246688,
+      "life": 91,
+      "food": 89,
+      "fun": 94,
+      "love": 82,
+      "level": 2,
+      "xp": 150,
+      "xpLimit": 160
+    },
+    "money": 12,
+    "inv": {},
+    "viewShit": false
+  },
+  "824719862764011581": {
+    "cat": {
+      "noSub": [],
+      "name": "frosty",
+      "emoji": ":cat:",
+      "edad": 1652477557544,
+      "life": 100,
+      "food": 100,
+      "fun": 100,
+      "love": 100,
+      "level": 2,
+      "xp": 0,
+      "xpLimit": 160
+    },
+    "money": 21,
+    "inv": {},
+    "viewShit": true
+  },
+  "751623986873630841": {
+    "cat": {
+      "noSub": [],
+      "name": "Kotto",
+      "emoji": ":cat:",
+      "edad": 1652479950513,
+      "life": 79,
+      "food": 88,
+      "fun": 90,
+      "love": 85,
+      "level": 5,
+      "xp": 450,
+      "xpLimit": 655.3600000000001
+    },
+    "money": 8,
+    "inv": {},
+    "viewShit": false
+  },
+  "843927568980770837": {
+    "cat": {
+      "noSub": [],
+      "name": "Matame",
+      "emoji": ":cat:",
+      "edad": 1652481647937,
+      "life": 99,
+      "food": 100,
+      "fun": 100,
+      "love": 100,
+      "level": 2,
+      "xp": 150,
+      "xpLimit": 160
+    },
+    "money": 4,
+    "inv": {},
+    "viewShit": false
+  },
+  "916380414468292638": {
+    "cat": {
+      "noSub": [],
+      "name": "Haru",
+      "emoji": ":cat:",
+      "edad": 1652481774731,
+      "life": 97,
+      "food": 95,
+      "fun": 99,
+      "love": 100,
+      "level": 2,
+      "xp": 0,
+      "xpLimit": 160
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "712483757294354513": {
+    "cat": {
+      "noSub": [],
+      "name": "Pou",
+      "emoji": ":cat:",
+      "edad": 1652483662856,
+      "life": 95,
+      "food": 96,
+      "fun": 92,
+      "love": 100,
+      "level": 3,
+      "xp": 250,
+      "xpLimit": 256
+    },
+    "money": 27,
+    "inv": {},
+    "viewShit": true
+  },
+  "859658133173567498": {
+    "cat": {
+      "noSub": [],
+      "name": "Strappy",
+      "emoji": ":cat:",
+      "edad": 1652487751127,
+      "life": 96,
+      "food": 99,
+      "fun": 98,
+      "love": 100,
+      "level": 3,
+      "xp": 0,
+      "xpLimit": 256
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "741104109964492801": {
+    "cat": {
+      "noSub": [],
+      "name": "Susiii",
+      "emoji": ":cat:",
+      "edad": 1652494863513,
+      "life": 99,
+      "food": 100,
+      "fun": 100,
+      "love": 100,
+      "level": 2,
+      "xp": 0,
+      "xpLimit": 160
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "763838654019665930": {
+    "cat": {
+      "noSub": [],
+      "name": "Nam",
+      "emoji": ":cat:",
+      "edad": 1652570503476,
+      "life": 74,
+      "food": 72,
+      "fun": 90,
+      "love": 90,
+      "level": 3,
+      "xp": 100,
+      "xpLimit": 256
+    },
+    "money": 28,
+    "inv": {},
+    "viewShit": false
+  },
+  "896857538459471902": {
+    "cat": {
+      "noSub": [],
+      "name": "Smeiker",
+      "emoji": ":cat:",
+      "edad": 1652663801901,
+      "life": 100,
+      "food": 97,
+      "fun": 98,
+      "love": 98,
+      "level": 1,
+      "xp": 50,
+      "xpLimit": 100
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "814145462935879680": {
+    "cat": {
+      "noSub": [],
+      "name": "Niaw furro",
+      "emoji": ":cat:",
+      "edad": 1652668153076,
+      "life": 93,
+      "food": 90,
+      "fun": 91,
+      "love": 94,
+      "level": 2,
+      "xp": 0,
+      "xpLimit": 160
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "791398162530828288": {
+    "cat": {
+      "noSub": [],
+      "name": "Ramírez",
+      "emoji": ":cat:",
+      "edad": 1652721142553,
+      "life": 44,
+      "food": 66,
+      "fun": 53,
+      "love": 94,
+      "level": 4,
+      "xp": 50,
+      "xpLimit": 409.6
+    },
+    "money": 5,
+    "inv": {
+      "Comida/Alimento": 0
+    },
+    "viewShit": false
+  },
+  "706957433045516348": {
+    "cat": {
+      "noSub": [],
+      "name": "Michigan La Secuela",
+      "emoji": ":cat:",
+      "edad": 1652751959382,
+      "life": 100,
+      "food": 61,
+      "fun": 94,
+      "love": 76,
+      "level": 9,
+      "xp": 2600,
+      "xpLimit": 4294.967296000002
+    },
+    "money": 1412,
+    "inv": {
+      "Comida/Alimento": 0,
+      "Claim Diario": 2,
+      "Medicina/Salud": 0,
+      "Bolita de Lana": 1
+    },
+    "viewShit": false,
+    "claim": true,
+    "claimDate": 1652853168017
+  },
+  "751565155963502703": {
+    "cat": {
+      "noSub": [],
+      "name": "Licenciado Furro",
+      "emoji": ":cat:",
+      "edad": 1652765678673,
+      "life": 96,
+      "food": 100,
+      "fun": 99,
+      "love": 99,
+      "level": 1,
+      "xp": 0,
+      "xpLimit": 100
+    },
+    "money": 0,
+    "inv": {},
+    "viewShit": false
+  },
+  "703624578219638855": {
+    "cat": {
+      "noSub": [],
+      "name": "kurama",
+      "emoji": ":cat:",
+      "edad": 1652821714222,
+      "life": 94,
+      "food": 94,
+      "fun": 98,
+      "love": 99,
+      "level": 2,
+      "xp": 100,
+      "xpLimit": 160
+    },
+    "money": 2,
+    "inv": {},
+    "viewShit": false
+  },
+  "890006613728067644": {
+    "cat": {
+      "noSub": [],
+      "name": "Tunometecabrasamambiche",
+      "emoji": ":cat:",
+      "edad": 1652822628195,
+      "life": 99,
+      "food": 99,
+      "fun": 100,
+      "love": 99,
+      "level": 3,
+      "xp": 100,
+      "xpLimit": 256
+    },
+    "money": 4,
+    "inv": {},
+    "viewShit": false
+  },
+  "915329928390639648": {
+    "cat": {
+      "noSub": [],
+      "name": "tu mama",
+      "emoji": ":cat:",
+      "edad": 1652831987975,
+      "life": 93,
+      "food": 88,
+      "fun": 89,
+      "love": 88,
+      "level": 1,
+      "xp": 50,
+      "xpLimit": 100
+    },
+    "money": 5,
+    "inv": {},
+    "viewShit": true
+  }
+}
