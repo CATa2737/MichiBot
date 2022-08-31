@@ -7,7 +7,7 @@ const connection = require("./connect");
 const memo = new db.memoDB("memo");
 
 const Client = new Discord.Client({
-  intents: 32767,
+  intents: 8,
   ws: {
     properties: {
       $browser: "Discord Android"
@@ -28,4 +28,4 @@ for (const file of events) {
   })
 }
 connection.Connect()
-Client.login("");
+Client.login(process.env["TOKEN"]);
