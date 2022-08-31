@@ -199,14 +199,14 @@ exports.run = async(message) => {
         if(inBedroom.includes(player.cat.name)) return message.reply("💤").then(a => {
           setTimeout(e => {
             a.delete()
-          }, 3800)
+          }, Client.time.seconds(3.8))
         });
       }
       return message.reply("¿Intentas llamar a tu michi? `responde \"s\" para continuar`").then(msj => {
         setTimeout(() => {
           msj.delete()
           admin.delete(`${message.member.id}.await`);
-        }, 4500)
+        }, Client.time.seconds(4.5))
         admin.set(`${message.member.id}.await.name`, "michi");
       })
         .catch(e => {
@@ -216,4 +216,5 @@ exports.run = async(message) => {
   }
 
 }
+
 

@@ -18,7 +18,7 @@ exports.run = async(Client) => {
       name: `Solo dí "mish" :D | ${estados[i]} | v${pack.version}`,
       type: "PLAYING"
     });
-  }, 10000)
+  }, Client.time.seconds(10))
 
   console.log(`MIAU!`)
 }
