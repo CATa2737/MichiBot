@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const db = require("megadb");
-const pack = require("./package.json");
+const pack = require("../package.json");
 const { SlashCommandBuilder } = require("@discordjs/builders");
 
 const cats = require("../schemas/cats");
