@@ -7,34 +7,35 @@ const connection = require("./connect");
 const memo = new db.memoDB("memo");
 
 const Client = new Discord.Client({
-  intents: 8,
-  ws: {
-    properties: {
-      $browser: "Discord Android"
-    }
-  },
+	intents: 8,
+	ws: {
+		properties: {
+			$browser: "Discord Android"
+		}
+	}
 })
+
 Client.time = require("time-nodejs");
 const events = fs.readdirSync("./events").filter(f => f.endsWith(".js"))
 
 for (const file of events) {
-  let fileCode = require(`./events/${file}`)
-  Client.on(file.replace(".js",""), async(...args) => {
-    try {
-      await fileCode.run(...args)
-    } catch (error) {
-      console.error(error)
-    }
-  })
+	let fileCode = require(`./events/${file}`)
+	Client.on(file.replace(".js",""), async(...args) => {
+		try {
+			await fileCode.run(...args)
+		} catch (error) {
+			console.error(error)
+		}
+	})
 }
 
 Client.slashcommands = new Discord.Collection();
 const slashcommands = fs.readdirSync("./slash commands").filter(file => file.endsWith(".js"));
 
 for(const file of slashcommands){
-  const slash = require(`./slash commands/${file}`);
-  console.log(`[SLASH COMMANDS 2.0] ${file} Loaded`)
-  Client.slashcommands.set(slash.data.name, slash)
+	const slash = require(`./slash commands/${file}`);
+	console.log(`[SLASH COMMANDS 2.0] ${file} Loaded`)
+	Client.slashcommands.set(slash.data.name, slash)
 }
 
 connection.Connect()
