@@ -4,7 +4,7 @@ const moment = require("moment");
 const ms = require("ms");
 const db = require("megadb");
 
-const bedroom = new db.crearDB("bedroom.js");
+const bedroom = new db.crearDB("bedroom");
 const memo = new db.memoDB("memo");
 
 exports.run = async(interaction) => {

@@ -13,10 +13,10 @@ const admin = new db.crearDB("admin");
 const bedroom = new db.crearDB("bedroom");
 const versiones = new db.crearDB("updates");
 exports.run = async(message) => {
+  
   try {
     if (memo.has(`${message.guild.id}`)) return;
-    if (message.author.bot || !message.guild || !message.channel.viewable) return;
-
+  
     let version = await versiones.get(`${message.guild.id}`);
     memo.set(`${message.guild.id}`, pack.version);
 
@@ -32,7 +32,6 @@ exports.run = async(message) => {
   
   
   
-  if (message.author.bot || !message.guild || !message.channel.viewable) return;
   let player = await cats.findOne({ id: message.member.id });
   let filter = { id: { $eq: message.member.id } };
   let prefix = "michi ";
