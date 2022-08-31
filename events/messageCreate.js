@@ -66,7 +66,7 @@ exports.run = async(message) => {
       versiones.set(`${message.guild.id}`, pack.version)
     }
 
-    const rest = new REST({ version: '9' }).setToken(process.env["TOKEN"]);
+    const rest = new REST({ version: '9' }).setToken();
 
     (async () => {
       try {

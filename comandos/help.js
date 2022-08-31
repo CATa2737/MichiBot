@@ -30,11 +30,11 @@ module.exports = {
                 .setCustomId(message.member.id+"help-slashs")
                 .setStyle("PRIMARY")
             );
-        
+
         message.channel.send({embeds: [embd], components: [row]}).then(msj => {
             setTimeout(a => {
                 msj.edit({ components: [] })
-            },60000)
+         }, 1 /* <— Minutes */ * 60 * 10000)
         });
     }
 }
