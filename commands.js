@@ -13,7 +13,11 @@ async function code(message, args, prefix) {
 	} catch (e) {
 		let msj = await message.channel.send(e.toString())
 		setTimeout(() => {
+<<<<<<< HEAD
 			msj.delete().catch(e => console.log(e))
+=======
+			msj.delete().catch(e => return console.log(e))
+>>>>>>> 444c5bf59c25b195589242221c87dc72741484b7
 		}, Client.time.seconds(10))
 	}
   }
@@ -84,7 +88,7 @@ async function rps(message){
 		content: `Elije tu movimiento...`,
 		components: [row]
 	})
-	.catch(err => throw err)
+	.catch(err => return console.log(err))
 }
 async function cat(Client, message, args){
 	let cmd = require(`./comandos/cat`)
