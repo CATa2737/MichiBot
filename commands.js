@@ -13,11 +13,7 @@ async function code(message, args, prefix) {
 	} catch (e) {
 		let msj = await message.channel.send(e.toString())
 		setTimeout(() => {
-<<<<<<< HEAD
 			msj.delete().catch(e => console.log(e))
-=======
-			msj.delete().catch(e => return console.log(e))
->>>>>>> 444c5bf59c25b195589242221c87dc72741484b7
 		}, Client.time.seconds(10))
 	}
   }
@@ -30,8 +26,8 @@ async function Awaiting(Client, message, Await) {
 async function michiInit(message, prefix) {
 	let filter = { id: { $eq:  message.member.id } }
 	let player = await cats.findOne( { id: { $eq:  message.member.id } } )
-	if(!message.content.startsWith(prefix)) return
-	if(player) return message.reply(`:x:Por ahora solo puedes tener un gatito, nuestra tecnología no es tan avanzada, en un futuro será -w-"`).catch(e => throw e)
+	if(!message.content.startsWith(prefix)) return;
+	if(player) return message.reply(`:x:Por ahora solo puedes tener un gatito, nuestra tecnología no es tan avanzada, en un futuro será -w-"`).catch(e => console.log(e));
 	let date = Date.now()
 	if(admin.has(`${message.member.id}.await`)) {
 		await message.channel.send(":x:Oh, parece que ya estaba esperando tu respuesta anteriormente, deja cancelo...")
@@ -88,7 +84,7 @@ async function rps(message){
 		content: `Elije tu movimiento...`,
 		components: [row]
 	})
-	.catch(err => return console.log(err))
+	.catch(err => console.log(err))
 }
 async function cat(Client, message, args){
 	let cmd = require(`./comandos/cat`)
