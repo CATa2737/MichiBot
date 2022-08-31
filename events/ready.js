@@ -3,7 +3,6 @@ const pack = require("../package.json");
 const cats = require("../schemas/cats");
 
 exports.run = async(Client) => {
-  //Esto con todos
 
   let michis = await cats.find({ id: { $exists: true } });
   let i = 0;
@@ -18,7 +17,7 @@ exports.run = async(Client) => {
       name: `Solo dí "mish" :D | ${estados[i]} | v${pack.version}`,
       type: "PLAYING"
     });
-  }, Client.time.seconds(10))
+  }, 10000)
 
   console.log(`MIAU!`)
 }
