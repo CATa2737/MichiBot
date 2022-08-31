@@ -27,5 +27,15 @@ for (const file of events) {
     }
   })
 }
+
+Client.slashcommands = new Discord.Collection();
+const slashcommands = fs.readdirSync("./slash commands").filter(file => file.endsWith(".js"));
+
+for(const file of slashcommands){
+  const slash = require(`./slash commands/${file}`);
+  console.log(`[SLASH COMMANDS 2.0] ${file} Loaded`)
+  Client.slashcommands.set(slash.data.name, slash)
+}
+
 connection.Connect()
-Client.login(process.env["TOKEN"]);
+Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g");

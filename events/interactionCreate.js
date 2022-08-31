@@ -46,18 +46,20 @@ exports.run = async(interaction) => {
     }
 
     if (interaction instanceof Discord.CommandInteraction) {
+      const slashcommand = Client.slashcommands.get(interaction.commandName)
+
+      if(!slashcommand) return;
+
       try {
-        let cmd = require(`./interactions/${interaction.commandName}`);
-        cmd.run(Client, interaction);
+        slashcommand.run(Client, interaction);
       } catch (error) {
-        console.log(error.toString())
-        interaction.reply({ content: `Ups!, ocurrió un error, probablemente discord no reconoció tu interacción ^^"`, ephemeral: true })
+        console.log("[SLASH COMMANDS] Error:" + error)
       }
     }
 
     if (interaction.isModalSubmit()) {
       try {
-        let cmd = require(`./interactions/${interaction.customId}`);
+        let cmd = require(`./modals/${interaction.customId}`);
         cmd.run(Client, interaction);
       } catch (error) {
         console.log(error.toString())

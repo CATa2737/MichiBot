@@ -17,47 +17,6 @@ exports.run = async(message) => {
     if (memo.has(`${message.guild.id}`)) return;
     if (message.author.bot || !message.guild || !message.channel.viewable) return;
 
-    const commands = [{
-      name: 'shop',
-      description: `Ve directo a la michi tienda!`
-    },
-    {
-      name: 'chess',
-      description: `Juega con tu michi al ajedrez moral!`
-    },
-    {
-      name: 'rat',
-      description: `Ayuda a tu michi a cazar ratones!`
-    },
-    {
-      name: 'rps',
-      description: `Juega con el michi al Piedras, Papel o Tijeras!`
-    },
-    {
-      name: 'fish',
-      description: `Ve a pescar junto a tu michi!`
-    },
-    {
-      name: 'race',
-      description: `Haz una carrera con un michi random!`
-    },
-    {
-      name: 'roullette',
-      description: `Juega a la MICHI-RULETA y prueba tu suerte! .w.`
-    },
-    {
-      name: 'inv',
-      description: `Mira tu inventario!`
-    },
-    {
-      name: `dev`,
-      description: `Información para solicitar unirte al team de desarrollo de MichiBot :D`
-    },
-    {
-      name: `changes`,
-      description: `Puedes ver los nuevos cambios :D`
-    }];
-
     let version = await versiones.get(`${message.guild.id}`);
     memo.set(`${message.guild.id}`, pack.version);
 
@@ -66,28 +25,9 @@ exports.run = async(message) => {
       versiones.set(`${message.guild.id}`, pack.version)
     }
 
-    const rest = new REST({ version: '9' }).setToken();
-
-    (async () => {
-      try {
-
-        await rest.put(
-          Routes.applicationGuildCommands("813152173818904597", message.guild.id),
-          { body: commands },
-        );
-      } catch (error) {
-        console.error(`Error al cargar slashs en ${message.guild.name}: ${error}`);
-      }
-    })();
-
   } catch (e) {
     console.log(e.toString())
       }
-
-
-
-
-
   
   
   
