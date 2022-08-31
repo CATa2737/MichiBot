@@ -1,0 +1,4 @@
+- Handlear los eventos.
+- Mejorar el sistema de comandos. Ej: "michi help".
+- Webhooks.
+- Se aceptan sugerencias.
