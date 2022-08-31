@@ -4,6 +4,8 @@ const pack = require("./package.json");
 const fs = require("fs")
 const connection = require("./connect");
 
+const memo = new db.memoDB("memo");
+
 const Client = new Discord.Client({
   intents: 32767,
   ws: {
