@@ -13,7 +13,7 @@ async function code(message, args, prefix) {
 	} catch (e) {
 		let msj = await message.channel.send(e.toString())
 		setTimeout(() => {
-			msj.delete().catch(e => throw e)
+			msj.delete().catch(e => console.log(e))
 		}, Client.time.seconds(10))
 	}
   }
