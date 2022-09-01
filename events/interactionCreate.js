@@ -7,18 +7,18 @@ const db = require("megadb");
 const bedroom = new db.crearDB("bedroom");
 const memo = new db.memoDB("memo");
 
-exports.run = async(interaction) => {
+exports.run = async(Client, interaction) => {
   let filter = { id: { $eq: interaction.member.id } };
   let player = await cats.findOne(filter);
 
   const inBedroom = await bedroom.get("sleeping");
   if (inBedroom.includes(player.cat.name)) return interaction.reply("**tu michi está mimiendo💤**\n\n**para despertarlo usa el comando** `michi sleep`");
-  let perm = interaction.guild.me.permissionsIn(interaction.channel).has('SEND_MESSAGES');
-  if (!interaction.channel.viewable || !perm) return;
+  
   const cd = new db.crearDB("cd");
   if (!cd.has(`${interaction.member.id}`)) {
     cd.set(`${interaction.member.id}`, false);
   }
+
   try {
     if (interaction.isButton() || interaction.customId === interaction.member.id + "buy") {
       try {

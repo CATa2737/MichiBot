@@ -22,7 +22,7 @@ for (const file of events) {
 	let fileCode = require(`./events/${file}`)
 	Client.on(file.replace(".js",""), async(...args) => {
 		try {
-			await fileCode.run(...args)
+			await fileCode.run(Client, ...args)
 		} catch (error) {
 			console.error(error)
 		}

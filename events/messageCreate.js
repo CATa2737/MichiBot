@@ -12,8 +12,7 @@ const memo = new db.memoDB("memo");
 const admin = new db.crearDB("admin");
 const bedroom = new db.crearDB("bedroom");
 const versiones = new db.crearDB("updates");
-exports.run = async(message) => {
-  
+exports.run = async(Client, message) => {
   try {
     if (memo.has(`${message.guild.id}`)) return;
   
