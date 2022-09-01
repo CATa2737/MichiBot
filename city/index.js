@@ -3,27 +3,6 @@ const { Collection } = require("discord.js")
 const city	= new Collection()
 city.houses	= new Collection()
 
-/*
-city.house.set("72947183719371991", {
-	owner: {
-		id: "728819381003",
-		name: "AguaDeCoco",
-		cat: {
-			name: "León",
-			say: (text) => {},
-			state: {
-				love: {
-					get: () => {},
-					add: () => {},
-					remove:()=>{}
-				},
-			}
-		}
-	},
-})
-*/
-// Back
-
 city.house = class {
 	constructor({owner}) {
 		this.owner = {
