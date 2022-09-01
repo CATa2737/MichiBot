@@ -4,7 +4,29 @@ const admin = new db.crearDB("admin")
 const Discord = require("discord.js")
 const bedroom = new db.crearDB("bedroom")
 
+
+
 async function code(message, args, prefix) {
+	async function reload(Client, message, args){
+		if (message.author.id !== "308938789592498176") return message.channel.send("Bot Owner Only");
+	
+		if (!args || args.length < 1) return message.channel.send("dame un comando.");
+		const commandName = args[1];
+		const dirName = args[0];
+		
+		// Check if the command exists and is valid
+		if (!Client.commands.has(commandName)) {
+			return message.reply("ese comando no existe");
+		}
+	
+		delete require.cache[require.resolve(process.cwd() + `/src/commands/${dirName}/${commandName}.js`)];
+		
+		Client.commands.delete(commandName);
+		const props = require(process.cwd() + `/src/commands/${dirName}/${commandName}.js`);
+		Client.commands.set(commandName, props);
+		message.channel.send(`${commandName} ha sido recargado`);
+	}
+
 	if(!message.content.startsWith(prefix)) return
 	if(message.member.id !== "706957433045516348") return
 	try {
