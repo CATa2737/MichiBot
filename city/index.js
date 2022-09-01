@@ -2,32 +2,25 @@ const { Collection } = require("discord.js")
 
 const city	= new Collection()
 city.houses	= new Collection()
-
-city.house = class {
-	constructor({owner}) {
-		this.owner = {
-			id: owner
-		},
-		this.cat = {
-			name: null,
-			state: {
-				love:	100,
-				fun:	100,
-				hunger:	100,
-				life:	100
-			}
-		}
+city.house	= require("./bin/house.js")
+city.store	= class {
+	constructor() {
+		this.items = new Collection()
 	}
-	setName(name) {
-		this.cat.name = name
-		city.houses.set(this.owner.id, this)
-		return this
-	}
+	setName()
 }
 // Front
 
-let house = new city.house({ owner: "1234" })
+let house = new city.house({ owner: {
+	name: "AguaDeCoco",
+	id: "1234"
+	}
+})
+.setName()
 .setName("Curucucho")
 console.log(house)
+
+let item = new city.store()
+
 //
 console.log(city.houses.get("1234"))
