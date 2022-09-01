@@ -24,9 +24,9 @@ let player = await cats.findOne({id: interaction.member.id});
                 new Discord.MessageButton()
                     .setLabel("¡Me interesa!")
                     .setStyle("LINK")
-                    .setCustomId("https://discord.gg/EKCjk2JEXD")
+                    .setURL("https://discord.gg/EKCjk2JEXD")
             )
-s
+
         await interaction.editReply({ embeds: [embd], components: [row] })
 
     } catch(e){

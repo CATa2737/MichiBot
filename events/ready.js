@@ -9,7 +9,7 @@ exports.run = async(Client) => {
   let estados = [`#MichiBotTeam`]
   setInterval(async () => {
     i++;
-    if (i > estados.length) {
+    if (i > 0) {
       i = 0;
     }
 
