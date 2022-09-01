@@ -14,23 +14,22 @@ const bedroom = new db.crearDB("bedroom");
 const versiones = new db.crearDB("updates");
 exports.run = async(Client, message) => {
   try {
-    if (memo.has(`${message.guild.id}`)) return;
-  
+    if (!memo.has(`${message.guild.id}`)){
     let version = await versiones.get(`${message.guild.id}`);
     memo.set(`${message.guild.id}`, pack.version);
 
     if (version !== pack.version) {
+      if(message.author.bot || !message.guild || !message.channel.viewable) return;        
       message.channel.send("🤖**EL BOT SE HA ACTUALIZADO EN ESTE SERVIDOR**🔴 🟡 🟢\n`si desea ver los cambios puede escribir /changes`")
       versiones.set(`${message.guild.id}`, pack.version)
     }
-
+    }
   } catch (e) {
     console.log(e.toString())
       }
   
-  
-  
-  
+  if(message.author.bot || !message.guild || !message.channel.viewable) return;        
+
   let player = await cats.findOne({ id: message.member.id });
   let filter = { id: { $eq: message.member.id } };
   let prefix = "michi ";
@@ -190,6 +189,7 @@ exports.run = async(Client, message) => {
       llamados = ["*bocina*"];
     }
   }
+
   for (let llamado of llamados) {
     if (message.content.toLowerCase().includes(llamado)) {
       const inBedroom = await bedroom.get("sleeping");
@@ -197,14 +197,14 @@ exports.run = async(Client, message) => {
         if(inBedroom.includes(player.cat.name)) return message.reply("💤").then(a => {
           setTimeout(e => {
             a.delete()
-          }, Client.time.seconds(3.8))
+          }, 3800)
         });
       }
       return message.reply("¿Intentas llamar a tu michi? `responde \"s\" para continuar`").then(msj => {
         setTimeout(() => {
           msj.delete()
           admin.delete(`${message.member.id}.await`);
-        }, Client.time.seconds(4.5))
+        }, 4500)
         admin.set(`${message.member.id}.await.name`, "michi");
       })
         .catch(e => {

@@ -4,7 +4,7 @@ const db = require("megadb");
 
 const fish = new db.memoDB("fish");
 
-exports.run = async(typing) => {
+exports.run = async(Client, typing) => {
   if (!fish.has(`${typing.channel.id}`)) return;
 
   fish.delete(`${typing.channel.id}`)

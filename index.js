@@ -4,10 +4,8 @@ const pack = require("./package.json");
 const fs = require("fs")
 const connection = require("./connect");
 
-const memo = new db.memoDB("memo");
-
 const Client = new Discord.Client({
-	intents: 8,
+	intents: 32767,
 	ws: {
 		properties: {
 			$browser: "Discord Android"
@@ -15,7 +13,6 @@ const Client = new Discord.Client({
 	}
 })
 
-Client.time = require("time-nodejs");
 const events = fs.readdirSync("./events").filter(f => f.endsWith(".js"))
 
 for (const file of events) {
