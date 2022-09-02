@@ -4,7 +4,8 @@
   "description": "Una mascota virtual que pueden cuidar entre todos en su server ^^, también puedes adpotar una tu mismo y te acompañará en todos tus servers!",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "dev": "nodemon index.js"
   },
   "engines": {
     "node": ">=16.0.0",
