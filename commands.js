@@ -196,7 +196,7 @@ async function updateEmbed(message){
 	.addField(` ✧˚・DIVERSIÓN・`,`> \`${player.cat.fun}%😹\``)
 	.setColor("#FDA4BA")
 	.setFooter({
-		text: "Novedades: Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev",
+		text: Client.news,
 		iconURL: "https://media.discordapp.net/attachments/936097122481229928/1006031973648707584/image_18.png?width=97&height=82"
 	})
 	message.message.edit({

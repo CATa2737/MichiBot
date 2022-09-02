@@ -3,7 +3,6 @@ const db = require("megadb");;
 const admin = new db.crearDB("admin");
 const ms = require("ms");
 const cats = require("../schemas/cats");
-const New = require("../index.js")
  
      
 module.exports = {
@@ -105,7 +104,7 @@ module.exports = {
               .addField(` ✧˚・AMOR・`,`> \`${player.cat.love}%💕\``)
               .addField(` ✧˚・DIVERSIÓN・`,`> \`${player.cat.fun}%😹\``)
               .setColor("#FDA4BA")
-              .setFooter({text: `Novedades: ${New}`, iconURL: "https://media.discordapp.net/attachments/936097122481229928/1006031973648707584/image_18.png?width=97&height=82"});
+              .setFooter({text: `Novedades: ${Client.news}`, iconURL: "https://media.discordapp.net/attachments/936097122481229928/1006031973648707584/image_18.png?width=97&height=82"});
 
           message.channel.send({components: [row,row2], embeds: [embd]}).then((msj) => {
             setTimeout(() => {
