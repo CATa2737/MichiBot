@@ -40,10 +40,11 @@ exports.run = async(Client, message) => {
   let allEv = (Math.floor(Math.random() * 100) === 69) ? true : false;
 
   if (command === "sleep") {
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.toLowerCase().startsWith(prefix)) return;
 
-    if (!player) return message.reply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`).catch(e => {
-      console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)
+    if (!player) return message.reply( `¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`)
+    .catch(e => {
+      console.log(`${e.toString()} En ${message.channel.name} de ${message.guild.name}`)
     });
 
     return commands.sleep(message);
@@ -100,9 +101,8 @@ exports.run = async(Client, message) => {
 
   if (command === "adopt") {
     if (!message.content.startsWith(prefix)) return;
-
     return commands.michiInit(message, prefix)
-  }
+  } 
 
   if (command === "shitpost") {
     if (!message.content.startsWith(prefix)) return;
