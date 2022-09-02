@@ -10,8 +10,8 @@ module.exports.run = async (Client, interaction) => {
 let player = await cats.findOne({id: interaction.member.id});
  await interaction.deferReply()
  
-  const levelup = require("../comandos && funciones/levelup");
-  levelup.run(Client,interaction);
+   
+  Client.levelupCheck(interaction);
         try{
 
         let options = [];

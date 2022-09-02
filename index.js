@@ -25,6 +25,7 @@ const Client = new Discord.Client({
 		}
 	}
 })
+
 Client.news = New;
 const events = fs.readdirSync("./events").filter(f => f.endsWith(".js"))
 
@@ -49,4 +50,5 @@ for(const file of slashcommands){
 }
 
 connection.Connect()
+require("./slashCommandsLoad.js");
 Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g")

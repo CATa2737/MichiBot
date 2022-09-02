@@ -10,13 +10,12 @@ let player = await cats.findOne( { id: { $eq:  interaction.member.id } } );
  await interaction.deferReply().catch(e => {
     console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
  })
-    const levelup = require("../comandos && funciones/levelup");
-    levelup.run(Client,interaction);
+     
+    Client.levelupCheck(interaction);
     player.claimDate = Date.now();
     await cats.findOneAndUpdate(filter,player)
     player.money = player.money+130;
     await cats.findOneAndUpdate(filter,player);
     await interaction.editReply(`Acabas de recibir tu bono!\n\n**+130 de 💸**`);
-    const { updateEmbed } = require("../commands");
-    updateEmbed(interaction);
+    Client.updateEmbed(interaction);
 }

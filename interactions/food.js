@@ -9,8 +9,8 @@ let filter = { id: { $eq:  interaction.member.id } };
 let player = await cats.findOne( { id: { $eq:  interaction.member.id } } );
  await interaction.deferReply()
  
-  const levelup = require("../comandos && funciones/levelup");
-  levelup.run(Client,interaction);
+   
+  Client.levelupCheck(interaction);
    
   let food = player.inv["Comida/Alimento"];
 
@@ -27,8 +27,7 @@ let player = await cats.findOne( { id: { $eq:  interaction.member.id } } );
           player.inv["Comida/Alimento"]--
           await cats.findOneAndUpdate(filter,player)
           
-          let { updateEmbed } = require("../commands")
-          updateEmbed(interaction);
+          Client.updateEmbed(interaction);
         })
     } else{
         await interaction.editReply(`Debes comprar comida, puedes usar /shop o utilizar el boton con un carrito de compras`).catch(e => {

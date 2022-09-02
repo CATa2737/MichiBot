@@ -4,17 +4,13 @@ const db = require("megadb");
 const Shitpost = require('discord-shitpost');
 const cats = require("../schemas/cats");
  
-
 module.exports = {
-    name: "hab",
-    description: "Buscar una habilidad y sus detalles",
-    category: "Sekkai",
-    usage: "hab <Nombre de la Habilidad>",
-    aliases: "Ninguno",
+    name: "shitpost",
+    description: "Con este comando verás memes \"asquerosos y no recomendados\"",
     run: async (Client, message, args) => {
 let filter = { id: { $eq:  message.member.id } };
-        const levelup = require("../comandos && funciones/levelup");
-        levelup.run(Client,message);
+         
+        Client.levelupCheck(message)
         const row = new Discord.MessageActionRow()
         .addComponents(
             new Discord.MessageButton()
@@ -26,11 +22,8 @@ let filter = { id: { $eq:  message.member.id } };
         let msj = await message.reply({content: Shitpost.allShitpost(), components: [row]})
 	setTimeout(() => {
         	msj.edit({components: []})
-		.catch(e => throw e)
-        }, 0.5 /*<— Minutes */ * 60 * 10000))
-        .catch(e => {
-            console.log(`${e.toString()} En ${message.channel.name} de ${message.guild.name}`)
-	});
+		.catch(e => console.log(e.toString()));
+        }, 0.5 /*<— Minutes */ * 60 * 10000)
         let player = await cats.findOne( { id: { $eq:  message.member.id } } );
         let viewShit = player.viewShit;
         if(player.cat.fun < 100) {

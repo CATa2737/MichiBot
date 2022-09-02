@@ -11,4 +11,5 @@ exports.run = async(Client) => {
       type: "PLAYING"
     })
   }, time.seconds(10))
+  console.log("Miau!")
 }

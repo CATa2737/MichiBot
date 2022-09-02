@@ -11,8 +11,8 @@ let player = await cats.findOne( { id: { $eq:  interaction.member.id } } );
   console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
 })
  
-    const levelup = require("../comandos && funciones/levelup");
-    levelup.run(Client,interaction);
+     
+    Client.levelupCheck(interaction);
      
     let medicine = player.inv["Medicina/Salud"];
 
@@ -29,8 +29,7 @@ let player = await cats.findOne( { id: { $eq:  interaction.member.id } } );
             player.inv["Medicina/Salud"] = i+1;
             await cats.findOneAndUpdate(filter,player);
           
-           let { updateEmbed } = require("../commands");
-           updateEmbed(interaction);
+           Client.updateEmbed(interaction);
         })
     } else{
         await interaction.editReply(`Debes comprar la medicina, puedes usar mishi shop o utilizar el boton con un carrito de compras`).catch(e => {

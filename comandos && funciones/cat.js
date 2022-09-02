@@ -7,11 +7,8 @@ const cats = require("../schemas/cats");
 const ms = require("ms");
 
 module.exports = {
-    name: "hab",
-    description: "Buscar una habilidad y sus detalles",
-    category: "Sekkai",
-    usage: "hab <Nombre de la Habilidad>",
-    aliases: "Ninguno",
+    name: "cat",
+    description: "Este comando se utiliza para ver el michi de alguien mas ^^",
     run: async (Client, message, args) => {
 	let filter = { id: { $eq:  message.member.id } };
         let mention = message.mentions.users.first();
@@ -55,7 +52,7 @@ module.exports = {
 
 	let msj = await message.channel.send({ embeds: [embd]})
 	setTimeout(() => {
-		msj.edit({components: []}).catch(e => throw e)
+		msj.edit({components: []}).catch(e => console.log(e.toString()))
 	},40000)
 	}
 }

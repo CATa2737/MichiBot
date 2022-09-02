@@ -3,22 +3,16 @@ const Discord = require("discord.js");
 const db = require("megadb");
 
 module.exports = {
-    name: "hab",
-    description: "Buscar una habilidad y sus detalles",
-    category: "Sekkai",
-    usage: "hab <Nombre de la Habilidad>",
-    aliases: "Ninguno",
     run: async (Client, message, args) => {
-let filter = { id: { $eq:  message.member.id } };
+      if(message.member.id !== "706957433045516348" || message.member.id !== "646726391118954505") return
       try {
-      } catch (error) {
-        message.channel.send("error: " + error).then(msj => {
-          setTimeout(() => {
-            msj.delete().catch(e => {
-              return;
-            });
-          },10000)
-        })
+        let player = await cats.findOne({ id: { $eq:  message.member.id } })
+        await eval(args.slice(0).join(" "))
+      } catch (e) {
+        let msj = await message.channel.send(e.toString())
+        setTimeout(() => {
+          msj.delete().catch(e => console.log(e))
+        }, Client.time.seconds(10))
       }
-    }
+      }
 };

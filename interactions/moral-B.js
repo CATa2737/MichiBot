@@ -10,8 +10,8 @@ let filter = { id: { $eq:  interaction.member.id } };
     await interaction.deferReply().catch(e => {
         console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
       })
-    const levelup = require("../comandos && funciones/levelup");
-    levelup.run(Client,interaction);
+     
+    Client.levelupCheck(interaction);
 
     if(player.cat.fun < 99) {
       player.cat.fun = player.cat.fun+6;

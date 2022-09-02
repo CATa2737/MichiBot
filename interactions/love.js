@@ -16,15 +16,14 @@ if(!player) return;
   console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
 })
  
-  const levelup = require("../comandos && funciones/levelup");
-  levelup.run(Client,interaction);
+   
+  Client.levelupCheck(interaction);
 
         cd.set(`${interaction.member.id}`,true)
         player.cat.love= player.cat.love+5;
         return cats.findOneAndUpdate(filter,player).then( async e => {
-          let {updateEmbed} = require("../commands");
-
-          updateEmbed(interaction); 
+          
+          Client.updateEmbed(interaction); 
            interaction.channel.send(`\`Espere 3 segundos...\``).then(msj => {
              setTimeout(() => {
                msj.delete()
