@@ -51,4 +51,4 @@ for(const file of slashcommands){
 
 connection.Connect()
 require("./slashCommandsLoad.js");
-Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.GQ6XAh.f-uyzOvYSWnlmh3_S6Zk72YVzakRkJ4dg4yODo")
+Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.G4VQiy.xZ9RYVOl3vPwwlvR9ItzISkq_CgPlBatDVal3E")
