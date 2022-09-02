@@ -24,25 +24,23 @@ module.exports = {
         edad = edad.replace("h", " Horas");
         edad = edad.replace("m", " Minutos");
         let estados = ["estoy en estado perfecto, yupiii!!","Me siento casi en estado perfecto","Me siento bien!","Me siento un poco mal","Estoy muy mal :C"];
-	let catStatus = () => {
-		return player.cat.life + player.cat.food + player.cat.love + player.cat.fun
-	}
-	switch(catStatus()) {
-		case < 399:
-			var estadoAnim = estados[0]
-			break
-		case > 400:
-			var estadoAnim = estados[1]
-			break
-		case < 350:
-			var estadoAnim = estados[2]
-			break
-		case < 250:
-			var estadoAnim = estados[3]
-			break
-		case < 150:
-			var estadoAnim = estados[4]
-	}
+          let estadoAnim;
+
+          if(player.cat.life +player.cat.food + player.cat.love + player.cat.fun > 399){
+            estadoAnim = estados[0];
+          }
+          if(player.cat.life +player.cat.food + player.cat.love + player.cat.fun < 400){
+            estadoAnim = estados[1];
+          }
+          if(player.cat.life +player.cat.food + player.cat.love + player.cat.fun < 350){
+            estadoAnim = estados[2];
+          }
+          if(player.cat.life +player.cat.food + player.cat.love + player.cat.fun < 250){
+            estadoAnim = estados[3];
+          }
+          if(player.cat.life +player.cat.food + player.cat.love + player.cat.fun < 150){
+            estadoAnim = estados[4];
+          } 
 	const embd = new Discord.MessageEmbed()
 	.setTitle(`${(!player.cat.bismarck) ? "miau" : "*bocina*"}, ${estadoAnim}`)
 	.setDescription("**💸Dinero:**\n> `" + player.money + `\`\n \n˹${player.cat.emoji}˼ • **`+player.cat.name.toUpperCase()+"** •───╮")

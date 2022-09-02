@@ -11,7 +11,7 @@ let player = await cats.findOne({id: interaction.member.id});
     console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
   })
 
-    const levelup = require("../comandos/levelup");
+    const levelup = require("../comandos && funciones/levelup");
     levelup.run(Client,interaction);
      
     let options = ["rock","paper","scizor"];

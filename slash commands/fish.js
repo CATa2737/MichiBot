@@ -17,7 +17,7 @@ module.exports = {
     await interaction.deferReply().catch(e => {
     console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
  })
-    const levelup = require("../comandos/levelup");
+    const levelup = require("../comandos && funciones/levelup");
     levelup.run(Client,interaction);
 
     try{
