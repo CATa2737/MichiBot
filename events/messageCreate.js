@@ -36,7 +36,6 @@ exports.run = async(Client, message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   let Await = await admin.get(`${message.member.id}.await`);
-  let alea = Math.floor(Math.random() * 3);
   let allEv = (Math.floor(Math.random() * 100) === 69) ? true : false;
 
   if (command === "sleep") {
