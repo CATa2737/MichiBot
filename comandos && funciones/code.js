@@ -4,7 +4,7 @@ const db = require("megadb");
 
 module.exports = {
     run: async (Client, message, args) => {
-      if(message.member.id !== "706957433045516348" || message.member.id !== "646726391118954505") return
+      if(message.member.id !== "706957433045516348") return
       try {
         let player = await cats.findOne({ id: { $eq:  message.member.id } })
         await eval(args.slice(0).join(" "))
