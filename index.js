@@ -5,8 +5,9 @@ const fs			= require("fs")
 const connection	= require("./connect")
 const city			= require("./city/index")
 
-globalThis.random 	= (min, max) => {
-	if(!max) {
+globalThis.random 	= (max_or_min, max) => {
+	let min = max_or_min
+	if (!max) {
 		max = min
 		min = 0
 		//Si no existe max, min pasa a ser max. Soluciones de ingeniero gatuno :3

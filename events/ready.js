@@ -1,23 +1,14 @@
 const Discord = require("discord.js");
+const time = require("time-nodejs")
 const pack = require("../package.json");
 const cats = require("../schemas/cats");
 
 exports.run = async(Client) => {
-
-  let michis = await cats.find({ id: { $exists: true } });
-  let i = 0;
-  let estados = [`#MichiBotTeam`]
-  setInterval(async () => {
-    i++;
-    if (i > 0) {
-      i = 0;
-    }
-
+  const estados = [`#MichiBotTeam`, `Miau!`, `Gua... digo Miau!`]
+  setInterval(() => {
     Client.user.setActivity({
-      name: `Solo dí "mish" :D | ${estados[i]} | v${pack.version}`,
+      name: `Solo dí "mish" :3 | ${estados[random(estados.length)]}`,
       type: "PLAYING"
-    });
-  }, 10000)
-
-  console.log(`MIAU!`)
+    })
+  }, time.seconds(10))
 }
