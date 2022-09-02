@@ -1,10 +1,11 @@
-const Discord = require("discord.js");
-const db = require("megadb");
-const pack = require("./package.json");
-const fs = require("fs")
-const connection = require("./connect");
+const Discord		= require("discord.js")
+const db			= require("megadb")
+const pack			= require("./package.json")
+const fs			= require("fs")
+const connection	= require("./connect")
+const city			= require("./city/index")
 
-const New = `Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev`;
+const New = `Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev`
 
 const Client = new Discord.Client({
 	intents: 32767,
@@ -28,16 +29,16 @@ for (const file of events) {
 	})
 }
 
-Client.slashcommands = new Discord.Collection();
-const slashcommands = fs.readdirSync("./slash commands").filter(file => file.endsWith(".js"));
+Client.slashcommands = new Discord.Collection()
+const slashcommands = fs.readdirSync("./slash commands").filter(file => file.endsWith(".js"))
 
 for(const file of slashcommands){
-	const slash = require(`./slash commands/${file}`);
+	const slash = require(`./slash commands/${file}`)
 	console.log(`[SLASH COMMANDS 2.0] ${file} Loaded`)
 	Client.slashcommands.set(slash.data.name, slash)
 }
 
 connection.Connect()
-Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g");
+Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g")
 
-module.exports = New;
+module.exports = New
