@@ -1,3 +1,7 @@
+const { Collection } = require("discord.js");
+const city = require("../index.js");
+city.houses	= new Collection();
+
 module.exports = class {
         constructor(owner) {
                 this.owner = {
