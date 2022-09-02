@@ -4,6 +4,8 @@ const pack = require("./package.json");
 const fs = require("fs")
 const connection = require("./connect");
 
+const New = `Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev`;
+
 const Client = new Discord.Client({
 	intents: 32767,
 	ws: {
@@ -37,3 +39,5 @@ for(const file of slashcommands){
 
 connection.Connect()
 Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g");
+
+module.exports = New;

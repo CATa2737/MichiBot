@@ -4,8 +4,6 @@ const admin = new db.crearDB("admin")
 const Discord = require("discord.js")
 const bedroom = new db.crearDB("bedroom")
 
-
-
 async function code(message, args, prefix) {
 	async function reload(Client, message, args){
 		if (message.author.id !== "308938789592498176") return message.channel.send("Bot Owner Only");
@@ -188,10 +186,10 @@ async function updateEmbed(message){
 	if(status < 250) var estadoAnim = estados[3]
 	if(status < 150) var estadoAnim = estados[4]
 	const embd = new Discord.MessageEmbed()
-	.setTitle(`${(!player.cat.bismarck) ? "miau" : "*bocina*"}, miaau(${estadoAnim})`)
-	.setDescription("**💸MONEY:**\n> `" + player.money + `\`\n \n˹${player.cat.emoji}˼ • **`+player.cat.name.toUpperCase()+"** •───╮")
+	.setTitle(`˹${player.cat.emoji}˼ • **${player.cat.name}** •───╮`)
+	.setDescription(`**💸MONEY:**\n> \`${player.money}\`\n \n*- "${(!player.cat.bismarck) ? `${(!player.cat.bismarck) ? "miau" : "*bocina*"}u ${(!player.cat.bismarck) ? "miau" : "*bocina*"}` : `*sonidos de barco* `}(${estadoAnim})"*`)
 	.addField(`✧ Edad:`,"> **"+edad+"**")
-	.addField("✧ Nivel de "+player.cat.name+".", "> `"+player.cat.level+"`")
+    .addField("✧ Nivel de "+player.cat.name+".", "> `"+player.cat.level+"`")
 	.addField(` ✧˚・SALUD・`,`> \`${player.cat.life}%❤️\``)
 	.addField(` ✧˚・COMIDA・`,`> \`${player.cat.food}%🍱\``)
 	.addField(` ✧˚・AMOR・`,`> \`${player.cat.love}%💕\``)

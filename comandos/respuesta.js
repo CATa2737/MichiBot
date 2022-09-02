@@ -3,6 +3,7 @@ const db = require("megadb");;
 const admin = new db.crearDB("admin");
 const ms = require("ms");
 const cats = require("../schemas/cats");
+const New = require("../index.js")
  
      
 module.exports = {
@@ -95,8 +96,8 @@ module.exports = {
             estadoAnim = estados[4];
           } 
           const embd = new Discord.MessageEmbed()
-              .setTitle(`${(!player.cat.bismarck) ? `${(!player.cat.bismarck) ? "miau" : "*bocina*"}u ${(!player.cat.bismarck) ? "miau" : "*bocina*"}` : "*sonidos de barco* "}(${estadoAnim})`)
-              .setDescription("**💸MONEY:**\n> `" + player.money + `\`\n \n˹${player.cat.emoji}˼ • **`+player.cat.name+"** •───╮")
+              .setTitle(`˹${player.cat.emoji}˼ • **${player.cat.name}** •───╮`)
+              .setDescription(`**💸MONEY:**\n> \`${player.money}\`\n \n*- "${(!player.cat.bismarck) ? `${(!player.cat.bismarck) ? "miau" : "*bocina*"}u ${(!player.cat.bismarck) ? "miau" : "*bocina*"}` : `*sonidos de barco* `}(${estadoAnim})"*`)
               .addField(`✧ Edad:`,"> **"+edad+"**")
               .addField("✧ Nivel de "+player.cat.name+".", "> `"+player.cat.level+"`")
               .addField(` ✧˚・SALUD・`,`> \`${player.cat.life}%❤️\``)
@@ -104,7 +105,7 @@ module.exports = {
               .addField(` ✧˚・AMOR・`,`> \`${player.cat.love}%💕\``)
               .addField(` ✧˚・DIVERSIÓN・`,`> \`${player.cat.fun}%😹\``)
               .setColor("#FDA4BA")
-              .setFooter({text: "Novedades: Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev", iconURL: "https://media.discordapp.net/attachments/936097122481229928/1006031973648707584/image_18.png?width=97&height=82"});
+              .setFooter({text: `Novedades: ${New}`, iconURL: "https://media.discordapp.net/attachments/936097122481229928/1006031973648707584/image_18.png?width=97&height=82"});
 
           message.channel.send({components: [row,row2], embeds: [embd]}).then((msj) => {
             setTimeout(() => {
