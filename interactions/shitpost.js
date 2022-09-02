@@ -10,7 +10,7 @@ let filter = { id: { $eq:  interaction.member.id } }
     try{
     let player = await cats.findOne({id: interaction.member.id});
     await interaction.deferReply()
-    const levelup = require("../comandos/levelup");
+    const levelup = require("../comandos && funciones/levelup");
     levelup.run(Client,interaction);
 
     const row = new Discord.MessageActionRow()

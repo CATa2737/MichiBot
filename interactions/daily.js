@@ -10,7 +10,7 @@ let player = await cats.findOne( { id: { $eq:  interaction.member.id } } );
  await interaction.deferReply().catch(e => {
     console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
  })
-    const levelup = require("../comandos/levelup");
+    const levelup = require("../comandos && funciones/levelup");
     levelup.run(Client,interaction);
     player.claimDate = Date.now();
     await cats.findOneAndUpdate(filter,player)

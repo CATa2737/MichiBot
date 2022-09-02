@@ -3,7 +3,7 @@ const db = require("megadb");
 const admin = new db.crearDB("admin");
 const TicTacToe = require('discord-tictactoe');
  
-const levelup = require("../comandos/levelup");
+const levelup = require("../comandos && funciones/levelup");
 
 const cats = require("../schemas/cats");
  
@@ -12,7 +12,7 @@ module.exports.run = async (Client, interaction) => {
 let player = await cats.findOne({id: interaction.member.id});
  await interaction.deferReply()
  
-    const levelup = require("../comandos/levelup");
+    const levelup = require("../comandos && funciones/levelup");
     levelup.run(Client,interaction);
     try {
     if(!player) return await interaction.editReply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`);

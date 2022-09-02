@@ -13,7 +13,7 @@ module.exports = {
     aliases: "Ninguno",
     run: async (Client, message, args) => {
 let filter = { id: { $eq:  message.member.id } };
-        const levelup = require("../comandos/levelup");
+        const levelup = require("../comandos && funciones/levelup");
         levelup.run(Client,message);
         const row = new Discord.MessageActionRow()
         .addComponents(
