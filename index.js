@@ -48,13 +48,5 @@ for(const file of slashcommands){
 	Client.slashcommands.set(slash.data.name, slash)
 }
 
-globalThis.random     = (min, max) => {
-    if(!max) {
-        return Math.floor(Math.random * min);
-    } else {
-		return Math.floor(Math.random() * (max + min) - min);
-	}
-}
-
 connection.Connect()
 Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g")
