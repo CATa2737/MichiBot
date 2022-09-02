@@ -5,7 +5,7 @@ const config = new db.crearDB("config");
 const cats = require("../schemas/cats");
  
 function response(Client,message,args){
-    let cmd = require(`../comandos/respuesta`);  
+    let cmd = require(`../comandos && funciones/respuesta`);  
     cmd.run(Client, message);
 }
 
