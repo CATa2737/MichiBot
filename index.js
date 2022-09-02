@@ -5,6 +5,15 @@ const fs			= require("fs")
 const connection	= require("./connect")
 const city			= require("./city/index")
 
+globalThis.random 	= (min, max) => {
+	if(!max) {
+		max = min
+		min = 0
+		//Si no existe max, min pasa a ser max. Soluciones de ingeniero gatuno :3
+	}
+	return Math.floor(Math.random() * ((max + 1) - min) + min)
+	//Espero que nunca nadie pregunte por qué está ese +1 allí, pero por alguna razón, el código no funciona sin el
+}
 const New = `Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev`
 
 const Client = new Discord.Client({
