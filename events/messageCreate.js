@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const commands = require("../commands.js")
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const db = require("megadb")
@@ -13,6 +12,10 @@ const admin = new db.crearDB("admin");
 const bedroom = new db.crearDB("bedroom");
 const versiones = new db.crearDB("updates");
 exports.run = async(Client, message) => {
+  
+globalThis.s 		= (text) => {
+	message.channel.send(text)
+}
   try {
     if (!memo.has(`${message.guild.id}`)){
     let version = await versiones.get(`${message.guild.id}`);
@@ -45,7 +48,7 @@ exports.run = async(Client, message) => {
       console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)
     });
 
-    return commands.sleep(message);
+    return;
   }
 
   if (command === "help") {

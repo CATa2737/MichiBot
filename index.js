@@ -3,7 +3,7 @@ const db			= require("megadb")
 const pack			= require("./package.json")
 const fs			= require("fs")
 const connection	= require("./connect")
-const city			= require("./city/index")
+const city			= require("./city/index.js")
 
 const New = `Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev`
 
@@ -36,6 +36,14 @@ for(const file of slashcommands){
 	const slash = require(`./slash commands/${file}`)
 	console.log(`[SLASH COMMANDS 2.0] ${file} Loaded`)
 	Client.slashcommands.set(slash.data.name, slash)
+}
+
+globalThis.random     = (min, max) => {
+    if(!max) {
+        return Math.floor(Math.random * min);
+    } else {
+		return Math.floor(Math.random() * (max - min) + min);
+	}
 }
 
 connection.Connect()

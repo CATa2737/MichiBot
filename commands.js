@@ -38,11 +38,6 @@ async function code(message, args, prefix) {
 	}
   }
 
-async function Awaiting(Client, message, Await) {
-	let cmd = require(`./awaits/${Await.name}`)
-	cmd.run(Client, message)
-}
-
 async function michiInit(message, prefix) {
 	let filter = { id: { $eq:  message.member.id } }
 	let player = await cats.findOne( { id: { $eq:  message.member.id } } )
@@ -77,10 +72,6 @@ async function michiInit(message, prefix) {
 	admin.set(message.member.id, { await: { name: "michiInit" } })
 }
 
-async function shitpost(Client, message, args){
-	let cmd = require(`./comandos/shitpost`);
-	cmd.run(Client, message, args);
-}
 async function rps(message){
 	const row = new Discord.MessageActionRow()
 	.addComponents(
@@ -105,15 +96,6 @@ async function rps(message){
 		components: [row]
 	})
 	.catch(err => console.log(err))
-}
-async function cat(Client, message, args){
-	let cmd = require(`./comandos/cat`)
-	cmd.run(Client, message, args)
-}
-
-async function help(Client, message, args){
-	let cmd = require(`./comandos/help`);
-	cmd.run(Client, message, args);
 }
 
 async function updateEmbed(message){
@@ -223,12 +205,8 @@ async function sleep(message) {
 
 module.exports = {
 	code,
-	Awaiting,
 	michiInit,
-	shitpost,
 	rps,
-	cat,
-	help,
 	updateEmbed,
 	sleep
 }
