@@ -9,18 +9,4 @@ city.store	= class {
 	}
 	setName()
 }
-// Front
-
-let house = new city.house({ owner: {
-	name: "AguaDeCoco",
-	id: "1234"
-	}
-})
-.setName()
-.setName("Curucucho")
-console.log(house)
-
-let item = new city.store()
-
-//
-console.log(city.houses.get("1234"))
+module.exports = city

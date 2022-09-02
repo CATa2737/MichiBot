@@ -1,5 +1,5 @@
 module.exports = class {
-        constructor({owner}) {
+        constructor(owner) {
                 this.owner = {
                         name: owner.name,
                         id: owner.id,
