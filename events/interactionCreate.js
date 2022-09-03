@@ -31,9 +31,6 @@ exports.run = async(Client, interaction) => {
         });
       } catch (error) {
         console.log(error.toString())
-        interaction.reply({ content: `Te recomendaría cliquear con timing ^^\""`, ephemeral: true }).catch(e => {
-          console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)
-        });
       }
     }
 
@@ -45,8 +42,7 @@ exports.run = async(Client, interaction) => {
           console.log("Error suprimido: "+e)
         });
       } catch (error) {
-        console.log(error.toString())
-        interaction.reply({ content: `Te recomendaría cliquear con timing ^^\""`, ephemeral: true })
+        console.log(error.toString())  
       }
     }
 
@@ -70,7 +66,6 @@ exports.run = async(Client, interaction) => {
         cmd.run(Client, interaction);
       } catch (error) {
         console.log(error.toString())
-        interaction.reply({ content: `Te recomendaría cliquear con timing ^^\""`, ephemeral: true })
       }
     }
 
