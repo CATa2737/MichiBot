@@ -24,6 +24,7 @@ module.exports.run = async (Client, interaction) => {
 
     try{
 
+      
       const memo = new db.memoDB("race");
 
       let pID = await memo.get(`${interaction.member.id}.player2`);
@@ -72,18 +73,23 @@ module.exports.run = async (Client, interaction) => {
       .catch(e => {
         return console.log(e.toString());
     });
-
-      if(x > 10) return interaction.editReply(`${player.cat.name} Gana :D\n\n**+25 de 💸**`).then( async a => {
+      if(!interaction.message) return;
+      if(x < 10) return interaction.reply("Cargando").then( async() => {
+        await interaction.deleteReply()
+      })
+      if(x > 10) return interaction.reply(`${player.cat.name} Gana :D\n\n**+25 de 💸**`).then( async a => {
         memo.delete(`${interaction.member.id}`);
-        interaction.message.edit({ components: [] });
-        interaction.message.delete();
+        interaction.message.edit({ components: [] }).catch(e => {
+          return console.log(`Probablemente mensaje borrado: ${e}`);
+        });
+        interaction.message.delete().cacth(e => {
+          return console.log(`Probablemente mensaje borrado: ${e}`);
+        });
         
       player.money = player.money + 30;
       await cats.findOneAndUpdate(filter,player)
       })
-      interaction.reply("Cargando").then( async() => {
-        await interaction.deleteReply()
-      })
+      
 
 
     } catch(e){

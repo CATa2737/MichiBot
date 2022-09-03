@@ -7,7 +7,6 @@ const memo = new db.memoDB("race");
 const cats = require("../schemas/cats");
  
 module.exports.run = async (Client, interaction) => {
-    return interaction.reply({ content: "Este comando ha sido deshabilitado temporalmente:(", ephemeral: true})
     let filter = { id: { $eq:  interaction.member.id } };
     let player = await cats.findOne({id: interaction.member.id});
     if(!player) interaction.reply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`).catch(e => {
@@ -49,10 +48,12 @@ module.exports.run = async (Client, interaction) => {
                     let x = await memo.get(`${interaction.member.id}.x2`);
 
                     if(x > 10) return interaction.channel.send({content: `${player2.cat.name} Gana > <.\n\n**+25 de 💸 a ${player2.cat.name}**`, components: []}).then( async a => {
+                        if(!msj) return;
                         memo.delete(`${interaction.member.id}`);
                         msj.edit({ components: []});
-                        await interaction.deleteReply();
-                        msj.delete();
+                        await interaction.deleteReply().catch(e => {
+                            return console.log(`Probablemente mensaje borrado: ${e}`);
+                        });
                         await player2.updateOne({ $inc: { money: 25 } });
                         let userWinner = Client.users.cache.find( u => u.id === player2.id);
                         if(!userWinner){
@@ -81,11 +82,11 @@ module.exports.run = async (Client, interaction) => {
                     terrain2[x] = player2.cat.emoji;
                     memo.set(`${interaction.member.id}.terrain2`,terrain2);
                     msj.edit({content: `\`${player.cat.name}\`\n${terrain.join("")}\n                                                            🍕\n\`${player2.cat.name}\`\n${terrain2.join("")}`}).catch(e => {
-                        return;
+                        return console.log(`Probablemente mensaje borrado: ${e}`);
                     });
                     
                 }
-            },5000)
+            },2800)
         })
         .catch(e => {
             return console.log(e.toString());
