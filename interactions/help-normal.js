@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const db = require("megadb");
- 
+ const fs = require("fs")
 
 const cats = require("../schemas/cats");
  
