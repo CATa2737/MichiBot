@@ -20,7 +20,7 @@ exports.run = async(Client, interaction) => {
   }
 
   try {
-    if (interaction.isButton() || interaction.customId === interaction.member.id + "buy") {
+    if (interaction.isButton() || interaction.customId === `${interaction.member.id}buy`) {
       try {
         if (!interaction.customId.includes(interaction.member.id)) return;
         let cmd = (interaction.customId.includes("roulette")) ? require("../interactions/roulette") : require(`../interactions/${interaction.customId.replace(interaction.member.id, "")}`);
@@ -34,7 +34,7 @@ exports.run = async(Client, interaction) => {
       }
     }
 
-    if (interaction.isSelectMenu() && interaction.customId !== interaction.member.id + "buy") {
+    if (interaction.isSelectMenu() && interaction.customId !== `${interaction.member.id}buy`) {
       try {
         if (!interaction.values[0].includes(interaction.member.id)) return;
         let cmd = require(`../interactions/${interaction.values[0].replace(interaction.member.id, "")}`);

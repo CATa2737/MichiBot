@@ -21,13 +21,13 @@ module.exports = {
             .addComponents(
                 new Discord.MessageButton()
                     .setLabel("COMANDOS")
-                    .setCustomId(message.member.id+"help-normal")
+                    .setCustomId(`${message.member.id}help-normal`)
                     .setStyle("PRIMARY")
             )
             .addComponents(
                 new Discord.MessageButton()
                 .setLabel("(/) SLASHS COMMANDS")
-                .setCustomId(message.member.id+"help-slashs")
+                .setCustomId(`${message.member.id}help-slashs`)
                 .setStyle("PRIMARY")
             );
 
