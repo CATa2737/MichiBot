@@ -1,9 +1,6 @@
 const { Collection } = require("discord.js");
-const city = require("../index.js");
-city.houses	= new Collection();
-
 const mysql = require("mysql")
-var database = mysql.createConnection({
+        var database = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "",
@@ -20,7 +17,7 @@ module.exports = class {
                                 food: 0
                         }
 
-                }
+                },
                 this.cat = {
                         name: null,
                         age: 0,
@@ -38,9 +35,9 @@ module.exports = class {
                         }
                 }
         }
-        setName(name) {
+        async setName(name) {
                 this.cat.name = name
-                city.houses.set(this.owner.id, this)
+                houses.set(this.owner.id, this)
                 database.query(`INSERT INTO houses (\`owner_name\`, \`owner_id\`, \`cat_name\`) VALUES ('${this.owner.name}', '${this.owner.id}', '${this.cat.name}');`, (error, results, fields) => {
                         if(error) throw error;
                 })

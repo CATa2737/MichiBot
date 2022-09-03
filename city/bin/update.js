@@ -8,11 +8,10 @@ var database = mysql.createConnection({
 })
 database.connect();
 
-module.exports = () => {
-    city.houses.map(house => {
-        let query1= `UPDATE houses`
-        let query2= 
-`SET owner_name='${house.owner.name}',
+module.exports = async() => {
+    houses.map(house => {
+        let query1 = `UPDATE houses`;
+        let query2 = `SET owner_name='${house.owner.name}',
 owner_money='${house.owner.money}',
 owner_inv_food='${house.owner.inventory.food}',
 owner_inv_medicine='${house.owner.inventory.medicine}',
@@ -26,11 +25,11 @@ cat_emoji='${house.cat.emoji}',
 cat_level_xp='${house.cat.level.xp}',
 cat_level_xpLimit='${house.cat.level.xpLimit}',
 cat_level_now='${house.cat.level.now}'
-`
-        let query3= `WHERE owner_id='${house.owner.id}'`
-        let query = `${query1} ${query2} ${query3}`
-        database.query(query, (error, results, fields) => {
+`;
+        let query3 = `WHERE owner_id='${house.owner.id}'`;
+        let query = `${query1} ${query2} ${query3}`;
+        database.query(query, async (error, results, fields) => {
             if(error) throw error;
-        })
+        });
     })
 }
