@@ -8,29 +8,21 @@ module.exports.run = async (Client, interaction) => {
     interaction.deferReply()
     let filter = { id: { $eq:  interaction.member.id } };
     let player = await cats.findOne({id: interaction.member.id});
+    let cmdRoutes = fs.readdirSync("./comandos && funciones")
 
     try{
         let comandos = [];
         let normales  = {
- adopt: "Con este comando adoptas un gatito",
- cat: "Con este comando puedes ver el michi de alguien mas",
- rps: "Puedes iniciar una pelea de piedras, papel o tijeras con tu gatito ^^",
- help: "Con este comando mostrás este mensaje",
- shitpost: "Con este comando puedes ver memes \"asquerosos no recomendados\"",
- sleep: "Con este comando mandas a mimir a tu michi ^^"
+            adopt: "Con este comando adoptas un gatito",
+            cat: "Con este comando puedes ver el michi de alguien mas",
+            rps: "Puedes iniciar una pelea de piedras, papel o tijeras con tu gatito ^^",
+            help: "Con este comando mostrás este mensaje",
+            shitpost: "Con este comando puedes ver memes \"asquerosos no recomendados\"",
+            sleep: "Con este comando mandas a mimir a tu michi ^^"
         };
-
-        let slashs = {
- chess: "Juega con tu michi al ajedrez moral!",
- inv: "Ves tu inventario!",
- rps: "Puedes iniciar una pelea de piedras, papel o tijeras con tu gatito ^^",
- rat: "Haz que tu gatito cazé unos ratones y con ello ganar dinero",
- shop: "Con este comando vas directo a la michi tienda",
- fish: "Ve a pescar junto a tu michi!",
- race: "Haz una carrera con un michi random!",
- roullette: "Juega a la MICHI-RULETA y prueba tu suerte! .w."
-};
-
+        for(let command of cmdRoutes) {
+            console.log(command)
+        }
         let cmds = normales;
 
         for(let comando in cmds){
