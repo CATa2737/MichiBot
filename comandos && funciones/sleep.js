@@ -5,8 +5,8 @@ const cats = require("../schemas/cats");
 const bedroom = new db.crearDB("bedroom");
 
 module.exports = {
-    name: "cat",
-    description: "Este comando se utiliza para ver el michi de alguien mas ^^",
+    name: "sleep",
+    description: "Este comando hará que tu michi se vaya a dormir ^^",
     run: async (Client, message, args) => {
         let player = await cats.findOne({ id: { $eq:  message.member.id } })
         const inBedroom = await bedroom.get("sleeping");
