@@ -29,6 +29,7 @@ exports.run = async(Client, message) => {
   let solicitarCmd = command && message.content.startsWith(prefix);
   utilities.run(Client, message, player)
 
+
   if(solicitarCmd){
     let usarCmdSinMichi = !player && command !== "help" && command !== "adopt" && command !== "cat";
     let elMichiDuerme = inBedroom.includes(player.cat.name) && command !== "help" && command !== "adopt" && command !== "cat";
@@ -53,10 +54,12 @@ exports.run = async(Client, message) => {
     }
   }
   
+
   if (Await) {
     let cmd = require(`../awaits/${Await}.js`);
     return cmd.run(Client, message);
   }
+
 
   let llamados = ["michi", "mish", "ps ps"]
   if (player) {
@@ -64,30 +67,14 @@ exports.run = async(Client, message) => {
       llamados = ["*bocina*"];
     }
   }
-
   for (let llamado of llamados) {
     let llamadoAlMichi = message.content.toLowerCase().includes(llamado);
     
     if (llamadoAlMichi) {
-      if (player) {
-        if(inBedroom.includes(player.cat.name)) return message.reply("💤").then(a => {
-          setTimeout(e => {
-            a.delete()
-          }, 3800)
-        });
-      }
-      return message.reply("¿Intentas llamar a tu michi? `responde \"s\" para continuar`").then(msj => {
-        setTimeout(() => {
-          msj.delete()
-          admin.delete(`${message.member.id}.await`);
-        }, 4500)
-        admin.set(`${message.member.id}.await.name`, "michi");
-      })
-        .catch(e => {
-          console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)
-        });
+      Client.whisper(message)
     }
   }
+  
 
 }
 
