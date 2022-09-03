@@ -1,20 +1,19 @@
 const Discord = require("discord.js");
 const db = require("megadb");
- 
 
 const cats = require("../schemas/cats");
  
 module.exports.run = async (Client, interaction) => {
-    if(!interaction) return;
     let filter = { id: { $eq:  interaction.member.id } };
-let player = await cats.findOne({id: interaction.member.id});
- await interaction.deferReply().catch(e => {
-    console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
- })
-     
+    let player = await cats.findOne({id: interaction.member.id});
+    
     Client.levelupCheck(interaction);
 
     try{
+
+    await interaction.message.delete().catch( e => {
+        return interaction.channel.send("Ups!, Ha ocurrido un error! ^^\"").then( a => console.log(e.toString()));
+    })
 
     } catch(e){
       console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)

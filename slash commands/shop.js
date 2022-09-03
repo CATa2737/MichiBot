@@ -22,8 +22,8 @@ if(!player) interaction.reply(`¿Quieres un gatito?, puedes decir "michi adopt" 
  await interaction.deferReply()
    
  
-  const levelup = require("../comandos && funciones/levelup");
-  levelup.run(Client,interaction);
+   
+  Client.levelupCheck(interaction);
 
         let options = [];
           shop.map(false,(data,categoría) => {

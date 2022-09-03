@@ -16,8 +16,8 @@ await interaction.deferReply().catch(e => {
  })
  player.money = player.money - apuesta;
  await cats.findOneAndUpdate(filter,player);
-    const levelup = require("../comandos && funciones/levelup");
-    levelup.run(Client,interaction);
+     
+    Client.levelupCheck(interaction);
 
     try{
       const row = new Discord.MessageActionRow()

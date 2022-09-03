@@ -5,11 +5,8 @@ const cats = require("../schemas/cats");
 const ms = require("ms");
 
 module.exports = {
-    name: "hab",
-    description: "Buscar una habilidad y sus detalles",
-    category: "Sekkai",
-    usage: "hab <Nombre de la Habilidad>",
-    aliases: "Ninguno",
+    name: "help",
+    description: "Con este comando mostrás este mensaje",
     run: async (Client, message, args) => {
         let filter = { id: { $eq:  message.member.id } };
         const embd = new Discord.MessageEmbed()

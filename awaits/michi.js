@@ -3,11 +3,6 @@ const db = require("megadb");
 const admin = new db.crearDB("admin");
 const config = new db.crearDB("config");
 const cats = require("../schemas/cats");
- 
-function response(Client,message,args){
-    let cmd = require(`../comandos && funciones/respuesta`);  
-    cmd.run(Client, message);
-}
 
 module.exports.run = async (Client, message) => {
     let filter = { id: { $eq:  message.member.id } };
@@ -18,7 +13,7 @@ module.exports.run = async (Client, message) => {
         if(!player) return message.reply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`).catch(e => {
             console.log(e.toString() + " En " + message.channel.name + " de "+message.guild.name)
           });
-        return response(Client, message);
+        return Client.response(message);
     } else {
         return admin.delete(`${message.member.id}.await`);
     }

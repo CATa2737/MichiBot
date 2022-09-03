@@ -15,8 +15,8 @@ if(!player) interaction.reply(`¿Quieres un gatito?, puedes decir "michi adopt" 
  
   if(!player) return await interaction.editReply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`)
  
-  const levelup = require("../comandos && funciones/levelup");
-  levelup.run(Client,interaction);
+   
+  Client.levelupCheck(interaction);
     const row = new Discord.MessageActionRow()
   .addComponents(
     new Discord.MessageButton()

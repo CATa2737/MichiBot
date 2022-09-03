@@ -8,6 +8,7 @@ const bedroom = new db.crearDB("bedroom");
 const memo = new db.memoDB("memo");
 
 exports.run = async(Client, interaction) => {
+  if(!interaction) return;
   let filter = { id: { $eq: interaction.member.id } };
   let player = await cats.findOne(filter);
 
@@ -25,12 +26,11 @@ exports.run = async(Client, interaction) => {
         if (!interaction.customId.includes(interaction.member.id)) return;
         let cmd = (interaction.customId.includes("roulette")) ? require("../interactions/roulette") : require(`../interactions/${interaction.customId.replace(interaction.member.id, "")}`);
 
-        cmd.run(Client, interaction);
+        cmd.run(Client, interaction).catch(e => {
+          console.log("Error suprimido: "+e)
+        });
       } catch (error) {
         console.log(error.toString())
-        interaction.reply({ content: `Ups!, ocurrió un error, probablemente discord no reconoció tu interacción ^^"`, ephemeral: true }).catch(e => {
-          console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)
-        });
       }
     }
 
@@ -38,10 +38,11 @@ exports.run = async(Client, interaction) => {
       try {
         if (!interaction.values[0].includes(interaction.member.id)) return;
         let cmd = require(`../interactions/${interaction.values[0].replace(interaction.member.id, "")}`);
-        cmd.run(Client, interaction);
+        cmd.run(Client, interaction).catch(e => {
+          console.log("Error suprimido: "+e)
+        });
       } catch (error) {
-        console.log(error.toString())
-        interaction.reply({ content: `Ups!, ocurrió un error, probablemente discord no reconoció tu interacción ^^"`, ephemeral: true })
+        console.log(error.toString())  
       }
     }
 
@@ -51,7 +52,9 @@ exports.run = async(Client, interaction) => {
       if(!slashcommand) return;
 
       try {
-        slashcommand.run(Client, interaction);
+        slashcommand.run(Client, interaction).catch(e => {
+          console.log("Error suprimido: "+e)
+        });
       } catch (error) {
         console.log("[SLASH COMMANDS] Error:" + error)
       }
@@ -63,7 +66,6 @@ exports.run = async(Client, interaction) => {
         cmd.run(Client, interaction);
       } catch (error) {
         console.log(error.toString())
-        interaction.reply({ content: `Ups!, ocurrió un error, probablemente discord no reconoció tu interacción ^^"`, ephemeral: true })
       }
     }
 

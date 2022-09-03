@@ -5,13 +5,14 @@ const ap = new db.memoDB("APUESTAS")
 const cats = require("../schemas/cats");
  
 module.exports.run = async (Client, interaction) => {
+    if(!interaction) return;
     let filter = { id: { $eq:  interaction.member.id } };
 let player = await cats.findOne({id: interaction.member.id});
  await interaction.deferReply().catch(e => {
     console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
  })
-    const levelup = require("../comandos && funciones/levelup");
-    levelup.run(Client,interaction);
+     
+    Client.levelupCheck(interaction);
 
     try{
       interaction.message.edit({ components: [] })

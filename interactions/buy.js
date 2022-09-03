@@ -10,8 +10,8 @@ let filter = { id: { $eq:  interaction.member.id } };
 let player = await cats.findOne({id: interaction.member.id});
  await interaction.deferReply()
  
-    const levelup = require("../comandos && funciones/levelup");
-    levelup.run(Client,interaction);
+     
+    Client.levelupCheck(interaction);
     let item = await shop.get(interaction.values[0].replace(interaction.member.id,""));
     if(item.requireLVL > player.cat.level) return interaction.editReply(`:x:${(!player.cat.bismarck) ? "miau" : "*bocina*"}n't >.< (El nivel de tu michi nivel no es suficiente, debe ser aunque sea nivel ${item.requireLVL} para comprarlo)`)
     if(player.money < item.price) return await interaction.editReply(`:x:${(!player.cat.bismarck) ? "miau" : "*bocina*"}n't >.< (no tienes el suficiente dinero para comprar eso)`).catch(e => {

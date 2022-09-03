@@ -25,7 +25,9 @@ const Client = new Discord.Client({
 		}
 	}
 })
+
 Client.news = New;
+Client.time = require("time-nodejs");
 const events = fs.readdirSync("./events").filter(f => f.endsWith(".js"))
 
 for (const file of events) {
@@ -44,9 +46,10 @@ const slashcommands = fs.readdirSync("./slash commands").filter(file => file.end
 
 for(const file of slashcommands){
 	const slash = require(`./slash commands/${file}`)
-	console.log(`[SLASH COMMANDS 2.0] ${file} Loaded`)
+	console.log(`[SLASH COMMANDS 2.0] ${file} Cargado`)
 	Client.slashcommands.set(slash.data.name, slash)
 }
 
 connection.Connect()
-Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g")
+require("./slashCommandsLoad.js");
+Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.G4VQiy.xZ9RYVOl3vPwwlvR9ItzISkq_CgPlBatDVal3E")

@@ -11,7 +11,7 @@ for(const file of slashcommands){
     commands.push(slash.data.toJSON())
 
 }
-    const rest = new REST({ version: '9' }).setToken("MTAxMzg1MTUxMTIzMjY2MzU4Mg.Gj9O7m.I31YQnszGL6svxRSCc6G6MNB5v1QJWi0l6hO6g");
+    const rest = new REST({ version: '9' }).setToken("MTAxMzg1MTUxMTIzMjY2MzU4Mg.G4VQiy.xZ9RYVOl3vPwwlvR9ItzISkq_CgPlBatDVal3EMTAxMzg1MTUxMTIzMjY2MzU4Mg.G4VQiy.xZ9RYVOl3vPwwlvR9ItzISkq_CgPlBatDVal3E");
     slashCreate()
 
     async function slashCreate(){

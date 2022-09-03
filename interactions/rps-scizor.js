@@ -10,8 +10,7 @@ module.exports.run = async (Client, interaction) => {
 let player = await cats.findOne({id: interaction.member.id});
  await interaction.deferReply()
  
-    const levelup = require(`../comandos/levelup`);
-    levelup.run(Client,interaction);
+    Client.levelupCheck(interaction);
      
     let options = [`rock`,`paper`,`scizor`];
     let random = options[Math.floor(Math.random() * options.length)];
