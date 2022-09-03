@@ -1,6 +1,16 @@
 {
   "706957433045516348": {
-    "michiActive": true
+    "michiActive": false,
+    "ratGame": {
+      "cat": {
+        "y": 1,
+        "x": 2
+      },
+      "rat": {
+        "y": 1,
+        "x": 2
+      }
+    }
   },
   "475378131373654026": {
     "michiActive": false
