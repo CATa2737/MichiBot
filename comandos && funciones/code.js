@@ -1,6 +1,7 @@
 const { Interaction } = require("discord.js");
 const Discord = require("discord.js");
 const db = require("megadb");
+const cats = require("../schemas/cats.js");
 
 module.exports = {
     run: async (Client, message, args) => {
