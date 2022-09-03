@@ -1,16 +1,24 @@
 const Discord = require("discord.js");
 const db = require("megadb");
  
+const cd = new db.memoDB("cooldownRace");
 
 const cats = require("../schemas/cats");
  
 module.exports.run = async (Client, interaction) => {
+  if(!interaction) return;
     let filter = { id: { $eq:  interaction.member.id } };
     const player = await cats.findOne({ id: { $eq: interaction.member.id } }).exec();
     
-    await interaction.deferReply().catch(e => {
-    console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
- })
+    let enCD = await cd.get(`${interaction.member.id}`);
+    if(enCD) return interaction.reply({content: `Espere 3 segundos por cada click`, ephemeral: true}).catch(e => {
+        return console.log(e.toString());
+    });
+    cd.set(`${interaction.member.id}`,true);
+    setTimeout( async() => {
+        cd.set(`${interaction.member.id}`, false);
+    }, Client.time.seconds(3));
+
      
     Client.levelupCheck(interaction);
 
@@ -20,6 +28,7 @@ module.exports.run = async (Client, interaction) => {
 
       let pID = await memo.get(`${interaction.member.id}.player2`);
       let player2 = await cats.findOne({ id: pID });
+      if(!pID) return;
 
       if(memo.has(`${interaction.member.id}.x`)){
         
@@ -66,12 +75,15 @@ module.exports.run = async (Client, interaction) => {
 
       if(x > 10) return interaction.editReply(`${player.cat.name} Gana :D\n\n**+25 de 💸**`).then( async a => {
         memo.delete(`${interaction.member.id}`);
+        interaction.message.edit({ components: [] });
         interaction.message.delete();
         
       player.money = player.money + 30;
       await cats.findOneAndUpdate(filter,player)
       })
-      interaction.deleteReply()
+      interaction.reply("Cargando").then( async() => {
+        await interaction.deleteReply()
+      })
 
 
     } catch(e){

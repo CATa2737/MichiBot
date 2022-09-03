@@ -27,6 +27,7 @@ const Client = new Discord.Client({
 })
 
 Client.news = New;
+Client.time = require("time-nodejs");
 const events = fs.readdirSync("./events").filter(f => f.endsWith(".js"))
 
 for (const file of events) {
