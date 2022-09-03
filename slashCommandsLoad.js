@@ -17,7 +17,7 @@ for(const file of slashcommands){
     async function slashCreate(){
         try {
             await rest.put(
-              Routes.applicationCommands("1013851511232663582"),
+              Routes.applicationCommands("813152173818904597"),
               { body: commands },
             );
             console.log("[SLASH COMMANDS 2.0] Cargados")
