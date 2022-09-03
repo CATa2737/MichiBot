@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const db = require("megadb");
+const fs = require("fs");
  
 
 const cats = require("../schemas/cats");
@@ -12,16 +13,11 @@ module.exports.run = async (Client, interaction) => {
 
     try{
         let comandos = [];
-        let normales  = {
-            adopt: "Con este comando adoptas un gatito",
-            cat: "Con este comando puedes ver el michi de alguien mas",
-            rps: "Puedes iniciar una pelea de piedras, papel o tijeras con tu gatito ^^",
-            help: "Con este comando mostrás este mensaje",
-            shitpost: "Con este comando puedes ver memes \"asquerosos no recomendados\"",
-            sleep: "Con este comando mandas a mimir a tu michi ^^"
-        };
+        let normales  = {};
         for(let command of cmdRoutes) {
-            console.log(command)
+            let com = require(`../comandos && funciones/${command}`);
+            if(!com.description) return;
+            normales[`${command.replace(".js","")}`] = `${com.description}`;
         }
         let cmds = normales;
 
