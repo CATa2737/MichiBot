@@ -7,8 +7,5 @@ city.store	= null // Próximamente... Nuestros gatos esclavos están pensando en
 
 module.exports = city
 
-setInterval(() => {
-    city.update()
-}, time.seconds(10)) //Cada 10 segundos, se actualiza la información
 let house = new city.house({owner: { name: "AguaDeCoco", id: "8192739187287" }})
 .setName("Curucucho")
