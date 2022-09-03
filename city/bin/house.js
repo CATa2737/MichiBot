@@ -20,7 +20,7 @@ module.exports = class {
                                 food: 0
                         }
 
-                },
+                }
                 this.cat = {
                         name: null,
                         age: 0,
