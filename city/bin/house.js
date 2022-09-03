@@ -15,9 +15,12 @@ module.exports = class {
                         name: owner.name,
                         id: owner.id,
                         money: 0,
-                        inventory: {}
+                        inventory: {
+                                medicine: 0,
+                                food: 0
+                        }
 
-                },
+                }
                 this.cat = {
                         name: null,
                         age: 0,
