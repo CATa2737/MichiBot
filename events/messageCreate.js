@@ -23,7 +23,7 @@ exports.run = async(Client, message) => {
   let player = await cats.findOne({ id: message.member.id });
   let filter = { id: { $eq:  message.member.id } };
   let prefix = "michi";
-  const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift();
   let Await = await admin.get(`${message.member.id}.await.name`);
   const inBedroom = await bedroom.get("sleeping");
@@ -36,7 +36,7 @@ exports.run = async(Client, message) => {
     
     try {
 
-      if (!message.content.startsWith(prefix)) return;
+      if (!message.content.toLowerCase().startsWith(prefix)) return;
 
       if (usarCmdSinMichi) return message.reply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`).catch(e => {
         console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)

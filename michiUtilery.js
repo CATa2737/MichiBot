@@ -3,6 +3,7 @@ const db = require("megadb");
 const bedroom = new db.crearDB("bedroom");
 const admin = new db.crearDB("admin");
 const Discord = require("discord.js");
+const city			= require("./city/index.js");
 
 exports.run = async(Client, message, player) => {
   let filter = { id: { $eq:  message.member.id } };
