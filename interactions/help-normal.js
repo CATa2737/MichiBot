@@ -1,20 +1,19 @@
-const Discord = require("discord.js");
+﻿const Discord = require("discord.js");
 const db = require("megadb");
 const fs = require("fs");
 
 const cats = require("../schemas/cats");
  
 module.exports.run = async (Client, interaction) => {
-    interaction.deferReply()
     let filter = { id: { $eq:  interaction.member.id } };
     let player = await cats.findOne({id: interaction.member.id});
-    let cmdRoutes = fs.readdirSync("./comandos && funciones")
+    let cmdRoutes = fs.readdirSync("./comandos")
 
     try{
         let comandos = [];
         let normales  = {};
         for(let command of cmdRoutes) {
-            let com = require(`../comandos && funciones/${command}`);
+            let com = require(`../comandos/${command}`);
             if(!com.description) return;
             normales[`${command.replace(".js","")}`] = `${com.description}`;
         }
@@ -34,8 +33,12 @@ module.exports.run = async (Client, interaction) => {
             .setFooter({iconURL: "https://cdn.discordapp.com/attachments/937798817976303617/970849962172768256/michibot.png", text: "MichiBot by CATa"})
             .setDescription(`${mensaje}\n\n<a:admiration_white:981331550568341554>[Soporte](https://discord.gg/EKCjk2JEXD)`);
 
-        interaction.message.edit( { embeds: [embd] } );
-        interaction.deleteReply();
+        interaction.message.edit( { embeds: [embd] } ).catch(e => {
+	  console.log(e.toString())
+	});
+        interaction.reply("cargando").then(a => {
+	  await interaction.deleteReply();
+	});
     } catch(e){
       console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
       interaction.channel.send({content: "Ha ocurrido un error, el error está siendo enviado a la developer",ephemeral: true})

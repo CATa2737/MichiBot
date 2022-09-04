@@ -12,9 +12,6 @@ exports.run = async(Client, interaction) => {
   let filter = { id: { $eq: interaction.member.id } };
   let player = await cats.findOne(filter);
 
-  const inBedroom = await bedroom.get("sleeping");
-  if (inBedroom.includes(player.cat.name)) return interaction.reply("**tu michi está mimiendo💤**\n\n**para despertarlo usa el comando** `michi sleep`");
-  
   const cd = new db.crearDB("cd");
   if (!cd.has(`${interaction.member.id}`)) {
     cd.set(`${interaction.member.id}`, false);
@@ -47,6 +44,9 @@ exports.run = async(Client, interaction) => {
     }
 
     if (interaction instanceof Discord.CommandInteraction) {
+      if(!player) return interaction.reply({ephemeral: true, content: `¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`});
+      const inBedroom = await bedroom.get("sleeping");
+      if (inBedroom.includes(player.cat.name)) return interaction.reply("**tu michi está mimiendo💤**\n\n**para despertarlo usa el comando** `michi sleep`");
       const slashcommand = Client.slashcommands.get(interaction.commandName)
 
       if(!slashcommand) return;

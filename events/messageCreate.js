@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+﻿const Discord = require("discord.js");
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const db = require("megadb")
@@ -19,6 +19,7 @@ exports.run = async(Client, message) => {
   }
 
   update.run(message)
+  let noMichiCmds = ["help","adopt","cat"];
   let player = await cats.findOne({ id: message.member.id });
   let filter = { id: { $eq:  message.member.id } };
   let prefix = "michi";
@@ -27,12 +28,11 @@ exports.run = async(Client, message) => {
   let Await = await admin.get(`${message.member.id}.await.name`);
   const inBedroom = await bedroom.get("sleeping");
   let solicitarCmd = command && message.content.startsWith(prefix);
-  utilities.run(Client, message, player)
-
+  utilities.run(Client, message)
 
   if(solicitarCmd){
-    let usarCmdSinMichi = !player && command !== "help" && command !== "adopt" && command !== "cat";
-    let elMichiDuerme = inBedroom.includes(player.cat.name) && command !== "help" && command !== "adopt" && command !== "cat";
+    let usarCmdSinMichi = !player && !noMichiCmds.includes(command);
+    let elMichiDuerme = (!player) ? false : inBedroom.includes(player.cat.name) && !noMichiCmds.includes(command);
     
     try {
 
@@ -42,12 +42,12 @@ exports.run = async(Client, message) => {
         console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)
       });
     
-      if (elMichiDuerme){
+      if (player && elMichiDuerme){
         return message.reply("**tu michi está mimiendo💤**\n\n**para despertarlo usa el comando** `michi sleep`");
     
       }
 
-      let cmd = require(`../comandos && funciones/${command}.js`);
+      let cmd = require(`../comandos/${command}.js`);
       return cmd.run(Client, message, args);
     } catch (error) {
       console.log(error.toString())
