@@ -15,7 +15,7 @@ globalThis.random 	= (max_or_min, max) => {
 	return Math.floor(Math.random() * ((max + 1) - min) + min)
 	//Espero que nunca nadie pregunte por qué está ese +1 allí, pero por alguna razón, el código no funciona sin el
 }
-const New = `Se está buscando equipo de desarrollo/programadores de bots para MichiBot :3, mas info al /dev`
+const New = `ALERTA: Se viene un Gran Reinicio, mas info al /news.`
 
 const Client = new Discord.Client({
 	intents: 32767,
@@ -50,6 +50,48 @@ for(const file of slashcommands){
 	Client.slashcommands.set(slash.data.name, slash)
 }
 
+globalThis.slashs = () => {
+        let comandos = []
+        let slashs = [];
+
+	for(const file of slashcommands){
+    	  const slash = require(`./slash commands/${file}`);
+    	  slashs.push(slash.data.toJSON())
+
+	}
+
+    let cmds = slashs;
+    for(let comando of cmds){
+        comandos.push(`**/${comando.name}** \n - *${comando.description}*`)
+
+    }
+
+    let mensaje = `**COMANDOS MICHIBOT**\n\n${comandos.join("\n")}`;
+	return mensaje;
+}
+
+globalThis.cmds = () => {
+
+	let cmdRoutes = fs.readdirSync(`./comandos`).filter(f => f.endsWith(".js"));
+    let comandos = [];
+    let normales  = [];
+
+    for(let comando of cmdRoutes) {
+        let com = require(`./comandos/${comando}`);
+	    normales.push( { name: comando.replace(".js",""), description: com.description });
+    }
+
+    let cmds = normales;
+
+    for(let comando of cmds){
+        comandos.push(`**michi ${comando.name}** \n- *${comando.description}*`)
+
+    }
+
+    let mensaje = `**COMANDOS MICHIBOT**\n\n${comandos.join("\n")}`;
+	return mensaje;
+}
+
 connection.Connect()
-require("./slashCommandsLoad.js");
+require("./slashcommandsLoad.js");
 Client.login("MTAxMzg1MTUxMTIzMjY2MzU4Mg.G4VQiy.xZ9RYVOl3vPwwlvR9ItzISkq_CgPlBatDVal3E")

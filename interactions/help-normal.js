@@ -7,26 +7,9 @@ const cats = require("../schemas/cats");
 module.exports.run = async (Client, interaction) => {
     let filter = { id: { $eq:  interaction.member.id } };
     let player = await cats.findOne({id: interaction.member.id});
-    let cmdRoutes = fs.readdirSync("./comandos")
-
+    
     try{
-        let comandos = [];
-        let normales  = {};
-        for(let command of cmdRoutes) {
-            let com = require(`../comandos/${command}`);
-            if(!com.description) return;
-            normales[`${command.replace(".js","")}`] = `${com.description}`;
-        }
-        let cmds = normales;
-
-        for(let comando in cmds){
-            comandos.push(`**michi ${comando}** \n -*${cmds[comando]}*`)
-
-            if(cmds[comando].toString().startsWith("function")) comandos.pop(`**michi ${comando}** \n -*${cmds[comando]}*`)
-        }
-
-        let mensaje = `**COMANDOS MICHIBOT**\n\n${comandos.join("\n")}`;
-        
+	let mensaje =  cmds();
         let embd = new Discord.MessageEmbed()
             .setAuthor({ name: "MICHIBOT | Un bot mascota virtual muy versatil! :D", iconURL: "https://cdn.discordapp.com/avatars/813152173818904597/421fc860d06b8daaf52171acea5de9fb.png?size=2048"})
             .setColor("ORANGE")
@@ -36,7 +19,7 @@ module.exports.run = async (Client, interaction) => {
         interaction.message.edit( { embeds: [embd] } ).catch(e => {
 	  console.log(e.toString())
 	});
-        interaction.reply("cargando").then(a => {
+        interaction.reply("cargando").then( async a => {
 	  await interaction.deleteReply();
 	});
     } catch(e){
