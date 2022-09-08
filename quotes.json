@@ -1,10 +1,136 @@
 {
-    "cName": [{
-        "es": "Ese nombre es muy largo, intenta de nuevo ^^\"",
-        "en": "That name is too long, try again .^."
-    },
-    {
-        "es": "¡Ok!, el nombre de tu michi ahora es ",
-        "en": "Nice!, The name of your michi(kitty) 'll be "
-    }]
+    "cName": [
+        {
+            "es": "Ese nombre es muy largo, intenta de nuevo ^^\"",
+            "en": "That name is too long, try again .^."
+        },
+        {
+            "es": "¡Ok!, el nombre de tu michi ahora es ",
+            "en": "Nice!, The name of your michi(kitty) 'll be "
+        }
+    ],
+    "noMichi": [
+        {
+            "es": "¿Quieres un gatito?, puedes decir \"michi adopt\" y ya .w.",
+            "en": "Do you want a kitten?, you can say \"michi adopt\" and get it .w."
+        }
+    ],
+    "michiInit": [
+        {
+            "es": "¡De acuerdo!, cuando quieras uno envíe `michi adopt` ^^",
+            "en": "Ok!, when you want a michi(kitty) send `michi adopt` ^^"
+        },
+        {
+            "es": "Perfecto, Puedes llamar a tu michi diciendo `mish`, `michi` o `ps ps` ^^",
+            "en": "Perfect, you can call your michi saying `mish`, `michi`, or `ps ps` .w."
+        }
+    ],
+    "adopt": [
+        {
+            "es": ":x:Por ahora solo puedes tener un gatito, nuestra tecnología no es tan avanzada, en un futuro será -w-",
+            "en": ":x:for now you can only have one kitten, our technology is not that advanced, in the future it will be -w-"
+        },
+        {
+            "es": "¡Hola!, soy **MichiBot**, dime como se llamará el michi ^w^",
+            "en": "Hi!, i'm **MichiBot**, tell me what michi(kitten) will be called ^w^"
+        }
+    ],
+    "whisper": [
+        {
+            "es": "¿Intentas llamar a tu michi? ^-^",
+            "en": "**do you try to call your michi? ^-^**"
+        }
+    ],
+    "response": [
+        {
+            "es": ["estoy en estado perfecto! :D","Me siento casi en estado perfecto","Me siento bien","Me siento un poco mal","Estoy muy mal :C"],
+            "en": ["i'm in perfect state, yay! :D", "i fell almost in perfect condition", "i fell good", "i feel a little bad", "i'm very bad :C"]
+        },
+        {
+            "es": "Edad:",
+            "en": "Age:"
+        },
+        {
+            "es": "Nivel de ",+
+            "en": "Level of "
+        },
+        {
+            "es": "SALUD",
+            "en": "HEALTH"
+        },
+        {
+            "es": "COMIDA",
+            "en": "FOOD"
+        },
+        {
+            "es": "AMOR",
+            "en": "LOVE"
+        },
+        {
+            "es": "DIVERSION",
+            "en": "FUN"
+        },
+        {
+            "es": "Novedades:",
+            "en": "Features:"
+        }
+    ],
+    "cat": [
+        {
+            "es": "Este es el michi de ",
+            "en": "This is the michi of "
+        }
+    ],
+    "help": [
+        {
+            "es": "MICHIBOT | ¡Un bot mascota virtual muy versatil! :D",
+            "en": "MICHIBOT | A virtual mascot discord bot very funny! ;D"
+        },
+        {
+            "es": "**Michibot** es un bot de uso muy versatil tanto para usuarios nuevos y con experiencia en discord :D\n\nAdopta un michi y cuida de el con estadísticas de diversión, salud, amor y comida. Tienes una tienda para comprarle cosas, unos minigames para que te diviertas, ¡y muchas otras cosas mas! :D.\n*Para llamar a tu michi debes usar la palabra **mish, michi o ps ps***\n\n<a:admiration_white:981331550568341554>[Soporte](https://discord.gg/EKCjk2JEXD)",
+            "en": "**MichiBot** is a very versatile bot for new users and experienced discord users :D\n\nAdopt a michi(kitten) and take care of him with fun, health, love and food stats. You have a store to buy things for him, some minigames for you to have fun and many other things! :D. \n*To call your michi you must use the word **mish, michi or ps ps***\n\<a:admiration_white:981331550568341554>[Support](https://discord.gg/EKCjk2JEXD)"
+        },
+        {
+            "es": "COMANDOS",
+            "en": "COMMANDS"
+        }
+    ],
+    "shitpost": [
+        {
+            "es": "OTRO",
+            "en": "AGAIN"
+        },
+        {
+            "es": "Aqui tienes +5 💸 por ser tu primera vez. \n \n`Advertencia: Aqui vas a ver memes de \"muy mal gusto\" que podrán contener lenguaje no apropiado y discriminación, al seguir usando este comando aceptas los terminos.`",
+            "en": "Here's +5 💸 for being your first time. \n\n`Warning: Here you will see memes in \"very bad taste\" that may contain inappropriate language and discrimination, by continuing to use this command you accept the termms.`"
+        }
+    ],
+    "sleep": [
+        {
+            "es": "**Tu michi se despertó :D**",
+            "en": "**Your michi has woken up :D**"
+        },
+        {
+            "es": "**Tu michi se fue a mimir💤**",
+            "en": "Your michi has gone to sleep💤"
+        }
+    ],
+    "michiSleeping": [
+        {
+            "es": "**tu michi está mimiendo💤**\n\n**para despertarlo usa el comando** `michi sleep`",
+            "en": "**Your michi is sleeping💤**\n\n**To wake him up you can use the command** `michi sleep`"
+        }
+    ],
+    "fishing": [
+        {
+            "es": "¡Haz espantado al pez!",
+            "en": "You scared the fish!"
+        }
+    ],
+    "rat": [
+        {
+            "es": "Ha cazado la rata >:D",
+            "en": "The rat has been hunted >:D"
+        }
+    ]
 }
