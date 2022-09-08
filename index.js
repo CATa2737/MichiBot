@@ -23,8 +23,14 @@ const Client = new Discord.Client({
 		properties: {
 			$browser: "Discord Android"
 		}
-	}
-})
+	},
+  partials: [
+    "MESSAGE",
+    "USER",
+    "CHANNEL",
+    "GUILD_MEMBER"
+  ]
+});
 
 Client.news = New;
 Client.time = require("time-nodejs");
