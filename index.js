@@ -32,12 +32,12 @@ const Client = new Discord.Client({
 			$browser: "Discord Android"
 		}
 	},
-  partials: [
-    "MESSAGE",
-    "USER",
-    "CHANNEL",
-    "GUILD_MEMBER"
-  ]
+	partials: [
+		"MESSAGE",
+		"USER",
+		"CHANNEL",
+		"GUILD_MEMBER"
+	]
 });
 
 Client.news = 'ALERTA: Se viene un Gran Reinicio, mas info al /news';
