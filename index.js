@@ -23,12 +23,7 @@ globalThis.translate    = ({ ...languages }) => {
         let lang = "es" //Obtener lenguaje
         if(!languages[lang]) lang = languagedefault
         return languages[lang]
-}	//Aún no es usable, no sean boludos. :3
-
-console.log(translate({
-        en: "Hi",
-        es: "Hola"
-}))
+}	//Aún no es usable, no sean boluvariabs
 
 const Client = new Discord.Client({
 	intents: 32767,
