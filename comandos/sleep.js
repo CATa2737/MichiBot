@@ -13,13 +13,13 @@ module.exports = {
         if(inBedroom.includes(player.cat.name)) {
             bedroom.extract("sleeping",player.cat.name)
             .then(() => {
-                message.reply("**tu michi se despertó :D**")
+                message.reply("**Tu michi se despertó :D**")
               })
             return
         }
         bedroom.push(`sleeping`,player.cat.name)
         .then(() => {
-            message.reply("**tu michi se fue a mimir💤**")
+            message.reply("**Tu michi se fue a mimir💤**")
         })
     }
 }

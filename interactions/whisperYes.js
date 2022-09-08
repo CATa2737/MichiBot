@@ -99,7 +99,7 @@ let player = await cats.findOne({id: interaction.member.id});
                 } 
                 const embd = new Discord.MessageEmbed()
                     .setTitle(`˹${player.cat.emoji}˼ • **${player.cat.name}** •───╮`)
-                    .setDescription(`**💸MONEY:**\n> \`${player.money}\`\n \n*- "${(!player.cat.bismarck) ? `${(!player.cat.bismarck) ? "miau" : "*bocina*"}u ${(!player.cat.bismarck) ? "miau" : "*bocina*"}` : `*sonidos de barco* `}(${estadoAnim})"*`)
+                    .setDescription(`**💸MONEY:**\n> \`${player.money}\`\n \n*- "¡Meow, miau!(${estadoAnim})"*`)
                     .addField(`✧ Edad:`,"> **"+edad+"**")
                     .addField("✧ Nivel de "+player.cat.name+".", "> `"+player.cat.level+"`")
                     .addField(` ✧˚・SALUD・`,`> \`${player.cat.life}%❤️\``)
