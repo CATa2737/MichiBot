@@ -29,7 +29,6 @@ console.log(translate({
         en: "Hi",
         es: "Hola"
 }))
-const New = `ALERTA: Se viene un Gran Reinicio, mas info al /news.`
 
 const Client = new Discord.Client({
 	intents: 32767,
@@ -46,7 +45,7 @@ const Client = new Discord.Client({
   ]
 });
 
-Client.news = New;
+Client.news = 'ALERTA: Se viene un Gran Reinicio, mas info al /news';
 Client.time = require("time-nodejs");
 const events = fs.readdirSync("./events").filter(f => f.endsWith(".js"))
 
