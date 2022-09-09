@@ -16,14 +16,14 @@ globalThis.random 	= (max_or_min, max) => {
 	//Espero que nunca nadie pregunte por qué está ese +1 allí, pero por alguna razón, el código no funciona sin el
 }
 
-globalThis.translate    = ({ ...languages }) => {
-        let languagedefault = "es"
+globalThis.translate    = ({ ...languages }, interaction) => {
+	const def = "es_ES" //Lenguaje por defecto
         if(!languages) throw new Error("Translate: No se ha introducido ningún lenguaje.")
-        if(!languages[languagedefault]) throw new Error("Translate: No se ha introducido el lenguaje predefinido: Español (es)")
-        let lang = "es" //Obtener lenguaje
-        if(!languages[lang]) lang = languagedefault
+        if(!languages[default]) throw new Error("Translate: No se ha introducido el lenguaje predefinido: Español (es)")
+        let lang = interaction.preferedLanguage
+        if(!languages[lang]) lang = default
         return languages[lang]
-}	//Aún no es usable, no sean boluvariabs
+}	//Aún no es usable, no sean boludos
 
 const Client = new Discord.Client({
 	intents: 32767,
