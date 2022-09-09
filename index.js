@@ -19,9 +19,9 @@ globalThis.random 	= (max_or_min, max) => {
 globalThis.translate    = ({ ...languages }, interaction) => {
 	const def = "es_ES" //Lenguaje por defecto
         if(!languages) throw new Error("Translate: No se ha introducido ningún lenguaje.")
-        if(!languages[default]) throw new Error("Translate: No se ha introducido el lenguaje predefinido: Español (es)")
+        if(!languages[def]) throw new Error("Translate: No se ha introducido el lenguaje predefinido: Español (es)")
         let lang = interaction.preferedLanguage
-        if(!languages[lang]) lang = default
+        if(!languages[lang]) lang = def
         return languages[lang]
 }	//Aún no es usable, no sean boludos
 
