@@ -5,8 +5,7 @@ const fs			= require("fs")
 const connection	= require("./connect")
 const city			= require("./city/index.js")
 
-const { color } = require("console-log-colors")
-const { cyanBright } = color
+const { cyanBright } = require("console-log-colors").color
 
 globalThis.cyan = cyanBright
 globalThis.random 	= (max_or_min, max) => {
