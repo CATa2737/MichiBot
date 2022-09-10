@@ -5,6 +5,10 @@ const fs			= require("fs")
 const connection	= require("./connect")
 const city			= require("./city/index.js")
 
+const { color } = require("console-log-colors")
+const { cyanBright } = color
+
+globalThis.cyan = cyanBright
 globalThis.random 	= (max_or_min, max) => {
 	let min = max_or_min
 	if (!max) {
@@ -60,7 +64,7 @@ const slashcommands = fs.readdirSync("./slash commands").filter(file => file.end
 
 for(const file of slashcommands){
 	const slash = require(`./slash commands/${file}`)
-	console.log(`[SLASH COMMANDS 2.0] ${file} Cargado`)
+	console.log(`${cyan("[SLASH COMMANDS 2.0]")} ${file} Cargado`)
 	Client.slashcommands.set(slash.data.name, slash)
 }
 

@@ -20,8 +20,8 @@ for(const file of slashcommands){
               Routes.applicationCommands("813152173818904597"),
               { body: commands },
             );
-            console.log("[SLASH COMMANDS 2.0] Cargados")
+            console.log(`${cyan("[SLASH COMMANDS 2.0]")} Cargados`)
           } catch (error) {
-            console.error(`[SLASH COMMANDS] ERROR: ${error}`);
+            console.error(`${cyan("[SLASH COMMANDS]")} ERROR: ${error}`);
           }
     }

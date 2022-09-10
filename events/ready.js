@@ -15,5 +15,5 @@ exports.run = async(Client) => {
     });
   }, Client.time.seconds(10))
 
-  console.log(`MIAU!`)
+  console.log(`${cyan("[BOT]")} MIAU!`)
 }

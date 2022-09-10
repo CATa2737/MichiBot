@@ -19,7 +19,7 @@ let dev = argv.dev || tokens[0].owner // CATa
 if(!tokens.find(t => t.owner === dev)) throw new Error("No se ha encontrado el token. Verifica ./login.js")
 else var token = tokens.find(t => t.owner === dev).token
 module.exports = (Client) => {
-	console.log("Logueando usando el token de: %s", dev)
+	console.log(`${cyan("[Login]")} Logueando usando el token de: ${dev}`)
 	Client.login(token)
 	.catch((error) => {
 		if(error.name === "Error [TOKEN_INVALID]") throw new Error("Se ha introducido un token inválido en ./login.js")

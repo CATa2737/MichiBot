@@ -19,6 +19,7 @@
     "anime-wallpapers": "^1.0.1",
     "awse": "^1.4.6",
     "bufferutil": "^4.0.6",
+    "console-log-colors": "^0.2.3",
     "death-hangman": "^1.1.2",
     "discord-api-types": "^0.29.0",
     "discord-buttons": "^4.0.0-deprecated",
