@@ -108,7 +108,5 @@ globalThis.cmds = () => {
 
 connection.Connect()
 require("./slashCommandsLoad.js");
-require("dotenv").config()
 
-Client.login(process.env.token)
-//Token de MichiBotTeam: MTAxMzg1MTUxMTIzMjY2MzU4Mg.G4VQiy.xZ9RYVOl3vPwwlvR9ItzISkq_CgPlBatDVal3E
+require("./login.js")(Client) // Loguea.
