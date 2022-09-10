@@ -14,7 +14,7 @@ const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
 
-
+if(argv.dev === true) argv.dev = "CATa"// Si en el npm start no pusiste un usuario
 let dev = argv.dev || tokens[0].owner // CATa
 if(!tokens.find(t => t.owner === dev)) throw new Error("No se ha encontrado el token. Verifica ./login.js")
 else var token = tokens.find(t => t.owner === dev).token
