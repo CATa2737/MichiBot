@@ -39,7 +39,7 @@ exports.run = async(Client, message) => {
       if (!message.content.toLowerCase().startsWith(prefix)) return;
 
       if (usarCmdSinMichi) return message.reply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`).catch(e => {
-        console.log(e.toString() + " En " + message.channel.name + " de " + message.guild.name)
+        console.log(`${e.toString()} En ${message.channel.name} de ${message.guild.name}`)
       });
     
       if (player && elMichiDuerme){

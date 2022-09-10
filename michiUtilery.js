@@ -44,38 +44,38 @@ exports.run = async(Client, message, player) => {
       .addComponents(
           new Discord.MessageButton()
           .setEmoji("<:michi_game:970236556315070505>")
-          .setCustomId(message.member.id+"games")
+          .setCustomId(`${message.member.id}games`)
           .setStyle("PRIMARY")
       )
       .addComponents(
           new Discord.MessageButton()
           .setEmoji("❤️")
-          .setCustomId(message.member.id+"love")
+          .setCustomId(`${message.member.id}love`)
           .setStyle("PRIMARY")
       )
       .addComponents(
           new Discord.MessageButton()
           .setEmoji("🍱")
-          .setCustomId(message.member.id+"food")
+          .setCustomId(`${message.member.id}food`)
           .setStyle("PRIMARY")
       )
       .addComponents(
           new Discord.MessageButton()
           .setEmoji("🛒")
-          .setCustomId(message.member.id+"shop")
+          .setCustomId(`${message.member.id}shop`)
           .setStyle("PRIMARY")
       )
       .addComponents(
           new Discord.MessageButton()
           .setEmoji("💊")
-          .setCustomId(message.member.id+"cure")
+          .setCustomId(`${message.member.id}cure`)
           .setStyle("PRIMARY")
       )
       const row2 = new Discord.MessageActionRow()
       .addComponents(
           new Discord.MessageButton()
           .setEmoji("🐱")
-          .setCustomId(message.member.id+"cat")
+          .setCustomId(`${message.member.id}cat`)
           .setStyle("SECONDARY")
       )
   
@@ -84,7 +84,7 @@ exports.run = async(Client, message, player) => {
               new Discord.MessageButton()
               .setEmoji("💰")
               .setDisabled(checkDay)
-              .setCustomId(message.member.id+"daily")
+              .setCustomId(`${message.member.id}daily`)
               .setStyle("SECONDARY")
           )
       }
@@ -102,8 +102,8 @@ exports.run = async(Client, message, player) => {
       const embd = new Discord.MessageEmbed()
       .setTitle(`˹${player.cat.emoji}˼ • **${player.cat.name}** •───╮`)
       .setDescription(`**💸MONEY:**\n> \`${player.money}\`\n \n*- "${(!player.cat.bismarck) ? `${(!player.cat.bismarck) ? "miau" : "*bocina*"}u ${(!player.cat.bismarck) ? "miau" : "*bocina*"}` : `*sonidos de barco* `}(${estadoAnim})"*`)
-      .addField(`✧ Edad:`,"> **"+edad+"**")
-      .addField("✧ Nivel de "+player.cat.name+".", "> `"+player.cat.level+"`")
+      .addField(`✧ Edad:`,`> **${edad}**`)
+      .addField(`✧ Nivel de ${player.cat.name}.`, `> \`${player.cat.level}\``)
       .addField(` ✧˚・SALUD・`,`> \`${player.cat.life}%❤️\``)
       .addField(` ✧˚・COMIDA・`,`> \`${player.cat.food}%🍱\``)
       .addField(` ✧˚・AMOR・`,`> \`${player.cat.love}%💕\``)
@@ -135,24 +135,24 @@ exports.run = async(Client, message, player) => {
       new Discord.MessageButton()
         .setEmoji("<:checkcirclefill:978508716917805068>")
         .setStyle("SUCCESS")
-        .setCustomId(message.member.id+"whisperYes")
+        .setCustomId(`${message.member.id}whisperYes`)
       )
       .addComponents(
         new Discord.MessageButton()
           .setEmoji("<:cerrar:978508740967948288>")
           .setStyle("DANGER")
-          .setCustomId(message.member.id+"whisperNo")
+          .setCustomId(`${message.member.id}whisperNo`)
       );
 
     return message.reply({components: [row], content: "**¿Intentas llamar a tu michi? ^-^**"}).then(msj => {
       setTimeout(() => {
         msj.delete().catch(e => {
-          return console.log("probablemente un mensaje borrado: "+e);  
+          return console.log(`probablemente un mensaje borrado: ${e}`);  
         });
       }, 5000)
     })
       .catch(e => {
-        return console.log("probablemente un mensaje borrado: "+e);  
+        return console.log(`probablemente un mensaje borrado: ${e}`);  
       });
   }
   

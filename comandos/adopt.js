@@ -15,7 +15,7 @@ module.exports = {
         let player = await cats.findOne( { id: { $eq:  message.member.id } } );
         if (player)
           return message.reply(`:x:Por ahora solo puedes tener un gatito, nuestra tecnología no es tan avanzada, en un futuro será -w-"`).catch(e => {
-            console.log(e.toString() + " En " + message.channel.name + " de "+message.guild.name)
+            console.log(`${e.toString()} En ${message.channel.name} de ${message.guild.name}`)
           });
       
         let date = Date.now();

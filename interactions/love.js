@@ -30,7 +30,7 @@ if(!player) return;
              },3500)
             });
            await interaction.editReply(`**Ronronea y se le/a nota feliz**\n\n**Tienes +5 de :heart:**`).catch(e => {
-             console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+             console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
            })
            setTimeout( () => {
                cd.set(`${interaction.member.id}`,false)

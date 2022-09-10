@@ -82,7 +82,7 @@ let player = await cats.findOne({id: interaction.member.id});
         if(game.cat.x === game.rat.x && game.cat.y === game.rat.y){
           rows[posCat.y].components[posCat.x].setEmoji("🐱");
           await interaction.editReply(`${player.cat.name} Ha cazado la rata >:D\n\n**+4 de 💸**`).catch(e => {
-            console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+            console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
           });
           player.money = player.money+4;
           await cats.findOneAndUpdate(filter,player);
@@ -95,6 +95,6 @@ rows[game.rat.y].components[game.rat.x].setEmoji("🐭");
           }
         
         interaction.message.edit({components: rows}).catch(e => {
-          console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+          console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
         })
   }

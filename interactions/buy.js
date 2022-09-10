@@ -15,7 +15,7 @@ let player = await cats.findOne({id: interaction.member.id});
     let item = await shop.get(interaction.values[0].replace(interaction.member.id,""));
     if(item.requireLVL > player.cat.level) return interaction.editReply(`:x:${(!player.cat.bismarck) ? "miau" : "*bocina*"}n't >.< (El nivel de tu michi nivel no es suficiente, debe ser aunque sea nivel ${item.requireLVL} para comprarlo)`)
     if(player.money < item.price) return await interaction.editReply(`:x:${(!player.cat.bismarck) ? "miau" : "*bocina*"}n't >.< (no tienes el suficiente dinero para comprar eso)`).catch(e => {
-        console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+        console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       })
 
     player.money = player.money - item.price;
@@ -26,7 +26,7 @@ let player = await cats.findOne({id: interaction.member.id});
     player.cat.emoji =  item.emoji;
     await cats.findOneAndUpdate(filter,player);
     await interaction.editReply(`Te acabas de comprar el emoji \`${item.emoji}\` para **${player.cat.name}** y le queda hermoso :D`).catch(e => {
-        console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+        console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       });
 
     }
@@ -37,7 +37,7 @@ let player = await cats.findOne({id: interaction.member.id});
           player.inv[item.name]++
           await cats.findOneAndUpdate(filter,player)
           await interaction.editReply(`Te acabas de comprar x1 \`${item.name}\` para **${player.cat.name}** :D`).catch(e => {
-            console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+            console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
           });
           if(item.noSub){
             player.noSub.push(item.name);
@@ -59,7 +59,7 @@ let player = await cats.findOne({id: interaction.member.id});
           player.inv[item.name] = 1;
           await cats.findOneAndUpdate(filter,player)
           await interaction.editReply(`Te acabas de comprar x1 \`${item.name}\` para **${player.cat.name}** :D`).catch(e => {
-            console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+            console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
           });
 
         }

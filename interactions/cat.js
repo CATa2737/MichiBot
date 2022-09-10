@@ -8,7 +8,7 @@ module.exports.run = async (Client, interaction) => {
 let filter = { id: { $eq:  interaction.member.id } };
 let player = await cats.findOne({cat:{id: interaction.member.id}});
  await interaction.deferReply().catch(e => {
-    console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+    console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
   })
  
      
@@ -16,7 +16,7 @@ let player = await cats.findOne({cat:{id: interaction.member.id}});
     .addComponents(
       new Discord.MessageButton()
       .setEmoji("<:tb_left:968330846413156402>")
-      .setCustomId(interaction.member.id+"catBack")
+      .setCustomId(`${interaction.member.id}catBack`)
       .setStyle("PRIMARY")
     );
 
@@ -28,20 +28,20 @@ let player = await cats.findOne({cat:{id: interaction.member.id}});
         .addComponents(
             new Discord.MessageButton()
             .setLabel("CAMBIAR NOMBRE")
-            .setCustomId(interaction.member.id+"cName")
+            .setCustomId(`${interaction.member.id}cName`)
             .setStyle("SECONDARY")
         )
         .addComponents(
             new Discord.MessageButton()
             .setLabel("VER INVENTARIO")
-            .setCustomId(interaction.member.id+"inv")
+            .setCustomId(`${interaction.member.id}inv`)
             .setStyle("SECONDARY")
         )
     interaction.message.edit({components: [row,row2], embeds: [embd]})
     await interaction.editReply("Espere....").catch(e => {
-        console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+        console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       })
     interaction.deleteReply().catch(e => {
-        console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+        console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       })
 }

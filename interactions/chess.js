@@ -26,7 +26,7 @@ let filter = { id: { $eq:  interaction.member.id } };
         );
 
     await interaction.editReply("https://cdn.discordapp.com/attachments/937798817976303617/975192955281367090/280478979_181329734321620_8434313250926599637_n.mp4").catch(e => {
-        console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+        console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       });
     
     interaction.channel.send({content: "Según tu criterio, ¿quien crees que ha ganado?",components: [row]}).then(msj => {
@@ -37,6 +37,6 @@ let filter = { id: { $eq:  interaction.member.id } };
             },60000)
     })
     .catch(e => {
-        console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+        console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       })
 }

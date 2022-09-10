@@ -24,7 +24,7 @@ exports.run = async(Client, interaction) => {
         let cmd = (interaction.customId.includes("roulette")) ? require("../interactions/roulette") : require(`../interactions/${interaction.customId.replace(interaction.member.id, "")}`);
 
         cmd.run(Client, interaction).catch(e => {
-          console.log("Error suprimido: "+e)
+          console.log(`Error suprimido: ${e}`)
         });
       } catch (error) {
         console.log(error.toString())
@@ -36,7 +36,7 @@ exports.run = async(Client, interaction) => {
         if (!interaction.values[0].includes(interaction.member.id)) return;
         let cmd = require(`../interactions/${interaction.values[0].replace(interaction.member.id, "")}`);
         cmd.run(Client, interaction).catch(e => {
-          console.log("Error suprimido: "+e)
+          console.log(`Error suprimido: ${e}`)
         });
       } catch (error) {
         console.log(error.toString())  
@@ -53,10 +53,10 @@ exports.run = async(Client, interaction) => {
 
       try {
         slashcommand.run(Client, interaction).catch(e => {
-          console.log("Error suprimido: "+e)
+          console.log(`Error suprimido: ${e}`)
         });
       } catch (error) {
-        console.log("[SLASH COMMANDS] Error:" + error)
+        console.log(`${cyan("[SLASH COMMANDS]")} Error: ${error}`)
       }
     }
 

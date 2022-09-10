@@ -20,7 +20,7 @@ module.exports.run = async (Client, interaction) => {
         interaction.message.edit( { embeds: [embd] } );
         interaction.deleteReply();
     } catch(e){
-      console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+      console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       interaction.channel.send({content: "Ha ocurrido un error, el error está siendo enviado a la developer",ephemeral: true})
   }
 }

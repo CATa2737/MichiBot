@@ -40,15 +40,15 @@ module.exports = {
           } 
 	const embd = new Discord.MessageEmbed()
 	.setTitle(`${(!player.cat.bismarck) ? "miau" : "*bocina*"}, ${estadoAnim}`)
-	.setDescription("**💸Dinero:**\n> `" + player.money + `\`\n \n˹${player.cat.emoji}˼ • **`+player.cat.name.toUpperCase()+"** •───╮")
-	.addField(`✧ Edad:`,"> **"+edad+"**")
-   	.addField("✧ Nivel de "+player.cat.name+".", "> `"+player.cat.level+"`")
+	.setDescription(`**💸Dinero:**\n> \`${player.money}\`\n \n˹${player.cat.emoji}˼ • **${player.cat.name.toUpperCase()}** •───╮`)
+	.addField(`✧ Edad:`,`> **${edad}**`)
+   	.addField(`✧ Nivel de ${player.cat.name}.`, `> \`${player.cat.level}\``)
       	.addField(` ✧˚・SALUD・`,`> \`${player.cat.life}%❤️\``)
       	.addField(` ✧˚・COMIDA・`,`> \`${player.cat.food}%🍱\``)
      	.addField(` ✧˚・AMOR・`,`> \`${player.cat.love}%💕\``)
      	.addField(` ✧˚・DIVERSIÓN・`,`> \`${player.cat.fun}%😹\``)
       	.setColor("#FDA4BA")
-      	.setFooter({text: "Este es el michi de "+mention.tag});
+      	.setFooter({text: `Este es el michi de ${mention.tag}`});
 
 	let msj = await message.channel.send({ embeds: [embd]})
 	setTimeout(() => {

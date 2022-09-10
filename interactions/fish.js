@@ -8,10 +8,10 @@ module.exports.run = async (Client, interaction) => {
     let filter = { id: { $eq:  interaction.member.id } };
     let player = await cats.findOne({id: interaction.member.id});
     if(!player) interaction.reply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`).catch(e => {
-      console.log(e.toString() + " En " + message.channel.name + " de "+message.guild.name)
+      console.log(`${e.toString()} En ${message.channel.name} de ${message.guild.name}`)
     });
     await interaction.deferReply().catch(e => {
-    console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+    console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
  })
      
     Client.levelupCheck(interaction);
@@ -24,7 +24,7 @@ module.exports.run = async (Client, interaction) => {
       const row = new Discord.MessageActionRow()
       .addComponents( new Discord.MessageButton()
         .setLabel(" ")
-        .setCustomId(interaction.member.id+"fish-catch")
+        .setCustomId(`${interaction.member.id}fish-catch`)
         .setStyle("PRIMARY")
        )
 
@@ -56,7 +56,7 @@ module.exports.run = async (Client, interaction) => {
       });
 
     } catch(e){
-      console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+      console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
       interaction.channel.send({content: "Ha ocurrido un error, el error está siendo enviado a la developer",ephemeral: true})
   }
 }

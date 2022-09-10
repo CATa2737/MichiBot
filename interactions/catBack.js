@@ -8,7 +8,7 @@ module.exports.run = async (Client, interaction) => {
 let filter = { id: { $eq:  interaction.member.id } };
 let player = await cats.findOne({ id: { $eq:  interaction.member.id } } );
  await interaction.deferReply().catch(e => {
-    console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+    console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
  })
      
     Client.levelupCheck(interaction);
@@ -19,14 +19,14 @@ let player = await cats.findOne({ id: { $eq:  interaction.member.id } } );
             });
           },5000))
           .catch(e => {
-            console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+            console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
           });
           
           Client.updateEmbed(interaction);
           await interaction.editReply("Editado!").catch(e => {
-            console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+            console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
           })
           interaction.deleteReply().catch(e => {
-            console.log(e.toString() + " En " + interaction.channel.name + " de "+interaction.guild.name)
+            console.log(`${e.toString()} En ${interaction.channel.name} de ${interaction.guild.name}`)
           })
 }
