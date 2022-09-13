@@ -38,12 +38,12 @@ exports.run = async(Client, message) => {
 
       if (!message.content.toLowerCase().startsWith(prefix)) return;
 
-      if (usarCmdSinMichi) return message.reply(`¿Quieres un gatito?, puedes decir "michi adopt" y ya .w.`).catch(e => {
+      if (usarCmdSinMichi) return message.reply(`No tienes un gato. ¿Quieres uno?, puedes decir "michi adopt" y ya .w.`).catch(e => {
         console.log(`${e.toString()} En ${message.channel.name} de ${message.guild.name}`)
       });
     
       if (player && elMichiDuerme){
-        return message.reply("**tu michi está mimiendo💤**\n\n**para despertarlo usa el comando** `michi sleep`");
+        return message.reply("**ZzZz 💤**\n`tu michi está mimiendo`\n\nPara despertarlo usa el comando `michi sleep`");
     
       }
 
