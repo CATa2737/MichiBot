@@ -27,12 +27,13 @@ module.exports = class {
                                 hunger: 100,
                                 life:   100
                         },
-                        emoji: null,
+                        emoji: "🐱",
                         level: {
                                 xp: 1,          //XP Actual
                                 xpLimit: 0,     //XP límite para que cuando xp llegue al número, suba el now
                                 now: 0          //Nivel actual
-                        }
+                        },
+                        sleeping: false
                 }
         }
         async setName(name) {

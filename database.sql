@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-09-2022 a las 23:17:33
+-- Tiempo de generación: 14-09-2022 a las 02:31:20
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -40,11 +40,19 @@ CREATE TABLE `houses` (
   `cat_state_fun` int(255) NOT NULL DEFAULT 100,
   `cat_state_hunger` int(255) NOT NULL DEFAULT 100,
   `cat_state_life` int(255) NOT NULL DEFAULT 100,
-  `cat_emoji` varchar(255) DEFAULT NULL,
+  `cat_emoji` varchar(255) DEFAULT '🐱',
   `cat_level_xp` int(255) NOT NULL DEFAULT 0,
   `cat_level_xpLimit` int(255) NOT NULL DEFAULT 1,
-  `cat_level_now` int(255) NOT NULL DEFAULT 0
+  `cat_level_now` int(255) NOT NULL DEFAULT 0,
+  `cat_sleeping` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='En esta tabla se guardarán las casas. Miau.';
+
+--
+-- Volcado de datos para la tabla `houses`
+--
+
+INSERT INTO `houses` (`id`, `owner_name`, `owner_id`, `owner_money`, `owner_inv_food`, `owner_inv_medicine`, `cat_name`, `cat_age`, `cat_state_love`, `cat_state_fun`, `cat_state_hunger`, `cat_state_life`, `cat_emoji`, `cat_level_xp`, `cat_level_xpLimit`, `cat_level_now`, `cat_sleeping`) VALUES
+(1, 'AguaDeCoco', '8192739187287', 0, 0, 0, 'Curucucho', 0, 100, 100, 100, 100, 'null', 0, 1, 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -64,7 +72,7 @@ ALTER TABLE `houses`
 -- AUTO_INCREMENT de la tabla `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
